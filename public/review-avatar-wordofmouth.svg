@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="Review avatar">
+  <defs>
+    <linearGradient id="g" x1="16" x2="80" y1="12" y2="84" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F45B1B"/>
+      <stop offset="1" stop-color="#29BDB2"/>
+    </linearGradient>
+  </defs>
+  <rect width="96" height="96" rx="28" fill="#0E1116"/>
+  <circle cx="48" cy="48" r="31" fill="url(#g)" opacity=".92"/>
+  <text x="48" y="57" text-anchor="middle" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#fff">WM</text>
+</svg>

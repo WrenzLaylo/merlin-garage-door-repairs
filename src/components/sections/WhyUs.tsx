@@ -13,25 +13,53 @@ export default function WhyUs() {
   return (
     <section className="section">
       <div className="container-x">
-        <ScrollReveal className="mx-auto max-w-2xl text-center">
-          <span className="eyebrow mb-4">Why choose us</span>
-          <h2 className="h-section">Melbourne's Merlin specialists.</h2>
-        </ScrollReveal>
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {WHY_US.map((item, index) => {
-            const Icon = ICONS[item.icon] ?? Award;
-            return (
-              <ScrollReveal key={item.title} delay={index * 0.05}>
-                <div className="card h-full text-center">
-                  <span className="mx-auto mb-4 grid h-14 w-14 place-items-center rounded-2xl bg-teal/10 text-teal-light">
-                    <Icon size={26} />
-                  </span>
-                  <h3 className="font-display font-semibold text-white">{item.title}</h3>
-                  <p className="mt-2 text-sm text-slate-400">{item.desc}</p>
+        <div className="grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr]">
+          <ScrollReveal>
+            <span className="eyebrow mb-4">Why choose us</span>
+            <h2 className="h-section">Melbourne's Merlin specialists.</h2>
+            <p className="mt-4 max-w-xl text-slate-400">
+              We focus on repair-first diagnosis, correct Merlin-compatible parts,
+              and opener settings that keep the door safe after the technician leaves.
+            </p>
+
+            <div className="mt-8 overflow-hidden rounded-3xl border border-ink-line bg-ink-soft shadow-soft">
+              <div className="relative aspect-[4/3]">
+                <img
+                  src="/why-merlin-specialists.webp"
+                  alt="Technician servicing a Merlin-style garage door opener"
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                />
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink via-ink/70 to-transparent p-5">
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    <span className="rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-sm font-semibold text-white backdrop-blur">
+                      Merlin-focused diagnostics
+                    </span>
+                    <span className="rounded-2xl border border-flame/30 bg-flame/20 px-4 py-3 text-sm font-semibold text-white backdrop-blur">
+                      Repair-first advice
+                    </span>
+                  </div>
                 </div>
-              </ScrollReveal>
-            );
-          })}
+              </div>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid gap-5 sm:grid-cols-2">
+            {WHY_US.map((item, index) => {
+              const Icon = ICONS[item.icon] ?? Award;
+              return (
+                <ScrollReveal key={item.title} delay={index * 0.05}>
+                  <div className="card h-full">
+                    <span className="mb-4 grid h-14 w-14 place-items-center rounded-2xl bg-teal/10 text-teal-light">
+                      <Icon size={26} />
+                    </span>
+                    <h3 className="font-display font-semibold text-white">{item.title}</h3>
+                    <p className="mt-2 text-sm text-slate-400">{item.desc}</p>
+                  </div>
+                </ScrollReveal>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

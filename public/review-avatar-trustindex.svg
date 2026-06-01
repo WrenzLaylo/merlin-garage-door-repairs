@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="Review avatar">
+  <defs>
+    <linearGradient id="g" x1="14" x2="82" y1="82" y2="14" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#29BDB2"/>
+      <stop offset=".55" stop-color="#123F47"/>
+      <stop offset="1" stop-color="#F45B1B"/>
+    </linearGradient>
+  </defs>
+  <rect width="96" height="96" rx="28" fill="#0A2226"/>
+  <circle cx="48" cy="48" r="31" fill="url(#g)" opacity=".95"/>
+  <text x="48" y="57" text-anchor="middle" font-family="Arial, sans-serif" font-size="27" font-weight="700" fill="#fff">TI</text>
+</svg>

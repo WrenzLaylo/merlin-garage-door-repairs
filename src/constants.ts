@@ -5,6 +5,7 @@ export interface ServiceItem {
   desc: string;
   badge: string | null;
   features: string[];
+  image?: string;
 }
 
 export interface BrandItem {
@@ -24,6 +25,9 @@ export interface TestimonialItem {
   rating: number;
   text: string;
   date?: string;
+  avatar?: string;
+  sourceLabel?: string;
+  sourceUrl?: string;
 }
 
 export interface WhyUsItem {
@@ -73,6 +77,7 @@ export const SERVICES: ServiceItem[] = [
     desc: "Fault diagnosis and repair for Merlin motors that will not respond, run intermittently, or have stopped.",
     badge: null,
     features: ["All Merlin models", "Same-day diagnosis", "Genuine parts"],
+    image: "/service-merlin-repair.webp",
   },
   {
     id: "roller-door",
@@ -81,6 +86,7 @@ export const SERVICES: ServiceItem[] = [
     desc: "SilentDrive and MR855 roller-door opener repairs and re-tuning for quiet, reliable operation.",
     badge: null,
     features: ["Quiet-operation restore", "Force and limit reset", "Safety beam check"],
+    image: "/service-merlin-tuning.webp",
   },
   {
     id: "remotes-myq",
@@ -89,6 +95,7 @@ export const SERVICES: ServiceItem[] = [
     desc: "Pair new remotes and keypads, install the myQ Connectivity Kit, and set up app access and alerts.",
     badge: "Popular",
     features: ["myQ setup", "Remote pairing", "Keypad install"],
+    image: "/service-merlin-accessories.webp",
   },
   {
     id: "hardware",
@@ -97,6 +104,7 @@ export const SERVICES: ServiceItem[] = [
     desc: "Replace worn belts, chains, sprockets, trolleys, and brackets, then safety-service the unit.",
     badge: null,
     features: ["Worn-part replacement", "Quiet and smooth", "Full safety service"],
+    image: "/service-merlin-repair.webp",
   },
   {
     id: "service",
@@ -105,6 +113,7 @@ export const SERVICES: ServiceItem[] = [
     desc: "Preventative servicing that keeps your Merlin opener safe, quiet, and reliable year-round.",
     badge: null,
     features: ["Force/limit calibration", "Lubrication", "Safety inspection"],
+    image: "/service-merlin-safety-check.webp",
   },
   {
     id: "install",
@@ -113,6 +122,7 @@ export const SERVICES: ServiceItem[] = [
     desc: "Supply and install the right Merlin opener for your door, set up and tested on the day.",
     badge: "Upgrade",
     features: ["Right-sized motor", "Pro installation", "Warranty-backed"],
+    image: "/service-merlin-install.webp",
   },
 ];
 

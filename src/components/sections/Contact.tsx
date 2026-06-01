@@ -5,9 +5,11 @@ import {
   Check,
   CheckCircle2,
   ChevronDown,
+  FileImage,
   Loader2,
   Phone,
   Upload,
+  X,
 } from "lucide-react";
 import { CONTACT, FORM_OPTIONS } from "../../constants";
 import type { NetworkConfig } from "../../hooks/useNetworkConfig";
@@ -210,6 +212,13 @@ export default function Contact({ config }: { config: NetworkConfig }) {
   const onFile = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     setFileName(file ? file.name : "");
+  };
+
+  const removeFile = () => {
+    if (fileRef.current) {
+      fileRef.current.value = "";
+    }
+    setFileName("");
   };
 
   const onSubmit = async (data: FormValues) => {
@@ -456,13 +465,36 @@ export default function Contact({ config }: { config: NetworkConfig }) {
 
               <div>
                 <label className="field-label">Photo (optional)</label>
-                <button
-                  type="button"
-                  onClick={() => fileRef.current?.click()}
-                  className="flex w-full items-center gap-2 rounded-xl border border-dashed border-ink-line bg-ink px-4 py-3 text-sm text-slate-400 hover:border-teal/40"
-                >
-                  <Upload size={16} /> {fileName || "Upload a photo of your opener"}
-                </button>
+                <div className="rounded-2xl border border-dashed border-ink-line bg-ink p-3 transition-colors hover:border-teal/40">
+                  <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                    <button
+                      type="button"
+                      onClick={() => fileRef.current?.click()}
+                      className="flex min-w-0 flex-1 items-center gap-3 rounded-xl bg-ink-soft/80 px-4 py-3 text-left transition hover:bg-ink-soft"
+                    >
+                      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-teal/10 text-teal-light">
+                        {fileName ? <FileImage size={18} /> : <Upload size={18} />}
+                      </span>
+                      <span className="min-w-0">
+                        <span className="block truncate text-sm font-semibold text-white">
+                          {fileName || "Upload a photo of your opener"}
+                        </span>
+                        <span className="mt-0.5 block text-xs text-slate-500">
+                          JPG, PNG, HEIC, or WebP helps us quote faster.
+                        </span>
+                      </span>
+                    </button>
+                    {fileName ? (
+                      <button
+                        type="button"
+                        onClick={removeFile}
+                        className="inline-flex items-center justify-center gap-2 rounded-xl border border-flame/30 px-4 py-3 text-sm font-semibold text-flame transition hover:bg-flame/10"
+                      >
+                        <X size={16} /> Remove
+                      </button>
+                    ) : null}
+                  </div>
+                </div>
                 <input ref={fileRef} type="file" accept="image/*" className="hidden" onChange={onFile} />
               </div>
 
