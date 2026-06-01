@@ -167,7 +167,7 @@ export const WHY_US: WhyUsItem[] = [
   {
     icon: "clock",
     title: "20+ years experience",
-    desc: "Backed by AGG Doors (est. 2004) with 600+ reviews across Melbourne.",
+    desc: "Backed by AGG Doors (est. 2004) with 781+ reviews across Melbourne.",
   },
   {
     icon: "shield",
