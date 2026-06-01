@@ -191,10 +191,10 @@ function uploadedPhoto(): ?array
         respond(400, false, 'Please upload a file smaller than 8 MB.');
     }
 
-    $allowed = ['image/png', 'image/jpeg', 'image/webp', 'application/pdf'];
+    $allowed  = ['image/png', 'image/jpeg', 'image/webp', 'image/heic', 'image/heif', 'application/pdf'];
     $detected = function_exists('mime_content_type') ? (string)mime_content_type($tmpName) : $type;
     if (!in_array($detected, $allowed, true)) {
-        respond(400, false, 'Please upload a PNG, JPG, WEBP, or PDF file.');
+        respond(400, false, 'Please upload a PNG, JPG, HEIC, WEBP, or PDF file.');
     }
 
     return ['tmp_name' => $tmpName, 'name' => $name, 'type' => $detected];
@@ -206,19 +206,22 @@ function forwardToElementor(string $endpoint, ?array $photo): void
         respond(500, false, 'The form service is missing a required server extension.');
     }
 
-    $payload = [];
-    foreach ($_POST as $key => $value) {
-        if ($key === 'company' || $key === '_form_started_at' || $key === 'cf-turnstile-response') {
-            continue;
-        }
+    // ── Explicit field allowlist — prevents clients injecting arbitrary keys ──
+    $allowedFormFields = [
+        'name', 'email', 'phone', 'suburb',
+        'property_type', 'service_type', 'service_for', 'door_type', 'message',
+    ];
 
-        if (is_array($value)) {
-            foreach ($value as $innerKey => $innerValue) {
-                $payload["{$key}[{$innerKey}]"] = (string)$innerValue;
-            }
-        } else {
-            $payload[$key] = (string)$value;
-        }
+    $payload = [
+        'action'     => 'elementor_pro_forms_send_form',
+        'post_id'    => $_POST['post_id']    ?? '',
+        'form_id'    => $_POST['form_id']    ?? '',
+        'queried_id' => $_POST['queried_id'] ?? '',
+    ];
+
+    $formFields = is_array($_POST['form_fields'] ?? null) ? $_POST['form_fields'] : [];
+    foreach ($allowedFormFields as $key) {
+        $payload["form_fields[{$key}]"] = trim((string)($formFields[$key] ?? ''));
     }
 
     if ($photo) {
@@ -227,15 +230,15 @@ function forwardToElementor(string $endpoint, ?array $photo): void
 
     $ch = curl_init($endpoint);
     curl_setopt_array($ch, [
-        CURLOPT_POST => true,
+        CURLOPT_POST           => true,
         CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_TIMEOUT => 25,
-        CURLOPT_POSTFIELDS => $payload,
-        CURLOPT_REFERER => 'https://merlingaragedoorrepairs.com.au/',
-        CURLOPT_USERAGENT => 'Merlin Garage Door Repairs quote proxy',
+        CURLOPT_TIMEOUT        => 25,
+        CURLOPT_POSTFIELDS     => $payload,
+        CURLOPT_REFERER        => 'https://merlingaragedoorrepairs.com.au/',
+        CURLOPT_USERAGENT      => 'Merlin Garage Door Repairs quote proxy',
     ]);
 
-    $raw = curl_exec($ch);
+    $raw      = curl_exec($ch);
     $httpCode = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
     curl_close($ch);
 

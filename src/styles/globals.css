@@ -5,6 +5,8 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    /* Offset anchor scroll targets so headings don't land under the sticky h-20 navbar */
+    scroll-padding-top: 5rem;
   }
 
   body {

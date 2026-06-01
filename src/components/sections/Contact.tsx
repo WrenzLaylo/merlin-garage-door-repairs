@@ -55,32 +55,67 @@ interface DropdownProps {
 
 function Dropdown({ label, value, options, onChange, error }: DropdownProps) {
   const [open, setOpen] = useState(false);
+  const [focused, setFocused] = useState(0);
   const ref = useRef<HTMLDivElement | null>(null);
+  const listRef = useRef<HTMLUListElement | null>(null);
+  const id = useRef(`dd-${Math.random().toString(36).slice(2)}`);
 
+  // Close on outside click
   useEffect(() => {
     const onClick = (event: MouseEvent) => {
       if (ref.current && !ref.current.contains(event.target as Node)) {
         setOpen(false);
       }
     };
-
     document.addEventListener("mousedown", onClick);
     return () => document.removeEventListener("mousedown", onClick);
   }, []);
+
+  // Scroll focused item into view
+  useEffect(() => {
+    if (!open) return;
+    const item = listRef.current?.children[focused] as HTMLElement | undefined;
+    item?.scrollIntoView({ block: "nearest" });
+  }, [focused, open]);
 
   const select = (option: string) => {
     onChange(option);
     setOpen(false);
   };
 
+  const onKeyDown = (e: React.KeyboardEvent) => {
+    if (!open) {
+      if (e.key === "Enter" || e.key === " " || e.key === "ArrowDown") {
+        e.preventDefault();
+        setFocused(value ? options.indexOf(value) : 0);
+        setOpen(true);
+      }
+      return;
+    }
+    if (e.key === "Escape") { e.preventDefault(); setOpen(false); return; }
+    if (e.key === "ArrowDown") { e.preventDefault(); setFocused((f) => Math.min(f + 1, options.length - 1)); return; }
+    if (e.key === "ArrowUp")   { e.preventDefault(); setFocused((f) => Math.max(f - 1, 0)); return; }
+    if (e.key === "Enter" || e.key === " ") { e.preventDefault(); select(options[focused]); return; }
+    if (e.key === "Home") { e.preventDefault(); setFocused(0); return; }
+    if (e.key === "End")  { e.preventDefault(); setFocused(options.length - 1); return; }
+  };
+
+  const listId = `${id.current}-list`;
+
   return (
     <div className="relative" ref={ref}>
-      <label className="field-label">{label}</label>
+      <label className="field-label" id={`${id.current}-label`}>{label}</label>
       <button
         type="button"
-        onClick={() => setOpen((value) => !value)}
+        onClick={() => { setFocused(value ? options.indexOf(value) : 0); setOpen((v) => !v); }}
+        onKeyDown={onKeyDown}
         aria-haspopup="listbox"
         aria-expanded={open}
+        aria-labelledby={`${id.current}-label`}
+        aria-controls={open ? listId : undefined}
+        aria-activedescendant={open ? `${id.current}-opt-${focused}` : undefined}
+        aria-invalid={Boolean(error)}
+        aria-describedby={error ? `${id.current}-err` : undefined}
         className={`flex w-full items-center justify-between rounded-xl border bg-ink px-4 py-3 text-left ${
           error ? "border-flame" : "border-ink-line"
         }`}
@@ -89,28 +124,36 @@ function Dropdown({ label, value, options, onChange, error }: DropdownProps) {
         <ChevronDown
           size={18}
           className={`text-slate-400 transition-transform ${open ? "rotate-180" : ""}`}
+          aria-hidden="true"
         />
       </button>
       {open ? (
         <ul
+          ref={listRef}
+          id={listId}
           role="listbox"
+          aria-labelledby={`${id.current}-label`}
           className="absolute z-20 mt-1 max-h-56 w-full overflow-auto rounded-xl border border-ink-line bg-ink-soft py-1 shadow-2xl"
         >
-          {options.map((option) => (
-            <li key={option} role="option" aria-selected={value === option}>
-              <button
-                type="button"
-                onClick={() => select(option)}
-                className="flex w-full items-center justify-between px-4 py-2.5 text-left text-sm text-slate-200 hover:bg-ink"
-              >
-                {option}
-                {value === option ? <Check size={16} className="text-teal" /> : null}
-              </button>
+          {options.map((option, i) => (
+            <li
+              key={option}
+              id={`${id.current}-opt-${i}`}
+              role="option"
+              aria-selected={value === option}
+              className={`flex cursor-pointer items-center justify-between px-4 py-2.5 text-sm ${
+                i === focused ? "bg-ink text-white" : "text-slate-200 hover:bg-ink"
+              }`}
+              onMouseEnter={() => setFocused(i)}
+              onClick={() => select(option)}
+            >
+              {option}
+              {value === option ? <Check size={16} className="text-teal" aria-hidden="true" /> : null}
             </li>
           ))}
         </ul>
       ) : null}
-      {error ? <p className="field-error">{error}</p> : null}
+      {error ? <p id={`${id.current}-err`} className="field-error" role="alert">{error}</p> : null}
     </div>
   );
 }
@@ -396,9 +439,11 @@ export default function Contact({ config }: { config: NetworkConfig }) {
                     id="name"
                     className="field-input"
                     placeholder="Your name"
+                    aria-invalid={Boolean(errors.name)}
+                    aria-describedby={errors.name ? "name-err" : undefined}
                     {...register("name", { required: "Name is required" })}
                   />
-                  {errors.name ? <p className="field-error">{errors.name.message}</p> : null}
+                  {errors.name ? <p id="name-err" className="field-error" role="alert">{errors.name.message}</p> : null}
                 </div>
                 <div>
                   <label className="field-label" htmlFor="phone">
@@ -408,9 +453,11 @@ export default function Contact({ config }: { config: NetworkConfig }) {
                     id="phone"
                     className="field-input"
                     placeholder="04xx xxx xxx"
+                    aria-invalid={Boolean(errors.phone)}
+                    aria-describedby={errors.phone ? "phone-err" : undefined}
                     {...register("phone", { required: "Phone is required" })}
                   />
-                  {errors.phone ? <p className="field-error">{errors.phone.message}</p> : null}
+                  {errors.phone ? <p id="phone-err" className="field-error" role="alert">{errors.phone.message}</p> : null}
                 </div>
               </div>
 
@@ -423,12 +470,14 @@ export default function Contact({ config }: { config: NetworkConfig }) {
                     id="email"
                     className="field-input"
                     placeholder="you@email.com"
+                    aria-invalid={Boolean(errors.email)}
+                    aria-describedby={errors.email ? "email-err" : undefined}
                     {...register("email", {
                       required: "Email is required",
                       pattern: { value: /^[^@\s]+@[^@\s]+\.[^@\s]+$/, message: "Enter a valid email" },
                     })}
                   />
-                  {errors.email ? <p className="field-error">{errors.email.message}</p> : null}
+                  {errors.email ? <p id="email-err" className="field-error" role="alert">{errors.email.message}</p> : null}
                 </div>
                 <div>
                   <label className="field-label" htmlFor="suburb">
@@ -438,9 +487,11 @@ export default function Contact({ config }: { config: NetworkConfig }) {
                     id="suburb"
                     className="field-input"
                     placeholder="e.g. Glen Waverley"
+                    aria-invalid={Boolean(errors.suburb)}
+                    aria-describedby={errors.suburb ? "suburb-err" : undefined}
                     {...register("suburb", { required: "Suburb is required" })}
                   />
-                  {errors.suburb ? <p className="field-error">{errors.suburb.message}</p> : null}
+                  {errors.suburb ? <p id="suburb-err" className="field-error" role="alert">{errors.suburb.message}</p> : null}
                 </div>
               </div>
 
