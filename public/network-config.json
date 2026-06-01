@@ -1,11 +1,17 @@
 {
   "contact": {
-    "business": { "number": "(03) 8789 9375", "tel": "+61387899375" },
-    "emergency": { "number": "(03) 8789 9376", "tel": "+61387899376" }
+    "business": {
+      "number": "(03) 8789 9375",
+      "tel": "+61387899375"
+    },
+    "emergency": {
+      "number": "(03) 8789 9376",
+      "tel": "+61387899376"
+    }
   },
   "stats": {
     "years": 20,
-    "reviews": 600,
+    "reviews": 781,
     "rating": 4.9,
     "warrantyMonths": 12
   },
@@ -34,34 +40,64 @@
   },
   "testimonials": [
     {
-      "name": "Rebecca T.",
-      "suburb": "Berwick",
+      "name": "Mary C.",
+      "suburb": "Bittern",
       "rating": 5,
-      "text": "Resolved the problem with great efficiency at a very reasonable cost.",
-      "date": "2026",
-      "avatar": "/review-avatar-productreview.svg",
-      "sourceLabel": "ProductReview",
-      "sourceUrl": "https://www.productreview.com.au/listings/agg-doors"
-    },
-    {
-      "name": "Sam K.",
-      "suburb": "Dandenong",
-      "rating": 5,
-      "text": "Techs were on time and efficient. Door much quieter after being serviced.",
-      "date": "2026",
+      "text": "We had Paul come to our house to repair our jammed garage door. Excellent job \u2014 it now slides better than ever. Highly recommend AGG Doors for excellent technicians and office staff.",
+      "date": "Oct 2025",
       "avatar": "/review-avatar-wordofmouth.svg",
       "sourceLabel": "Word of Mouth",
       "sourceUrl": "https://www.wordofmouth.com.au/reviews/agg-doors-hallam"
     },
     {
-      "name": "Michelle L.",
-      "suburb": "Frankston",
+      "name": "Hugh O.",
+      "suburb": "Melbourne",
       "rating": 5,
-      "text": "Excellent service from AGG Doors, with good, solid advice from Shaun.",
-      "date": "2026",
-      "avatar": "/review-avatar-trustindex.svg",
-      "sourceLabel": "Trustindex",
-      "sourceUrl": "https://www.trustindex.io/reviews/www.garagedoorrepair.net.au/lang/en"
+      "text": "A very professional group from the time they took my call \u2014 committing to turning up on time and most importantly doing a very thorough and professional job to get me out of trouble. Very impressed, and this is the second time I've used them.",
+      "date": "Sep 2025",
+      "avatar": "/review-avatar-wordofmouth.svg",
+      "sourceLabel": "Word of Mouth",
+      "sourceUrl": "https://www.wordofmouth.com.au/reviews/agg-doors-hallam"
+    },
+    {
+      "name": "Bron B.",
+      "suburb": "Melbourne",
+      "rating": 5,
+      "text": "The staff who fixed our garage door were really nice, polite and did a great job. Very happy with the service received.",
+      "date": "Aug 2025",
+      "avatar": "/review-avatar-wordofmouth.svg",
+      "sourceLabel": "Word of Mouth",
+      "sourceUrl": "https://www.wordofmouth.com.au/reviews/agg-doors-hallam"
+    },
+    {
+      "name": "Bradley Y.",
+      "suburb": "Melbourne",
+      "rating": 5,
+      "text": "The tradesman who came was brilliant and fixed my garage door. Couldn't be happier with the result.",
+      "date": "Jul 2025",
+      "avatar": "/review-avatar-wordofmouth.svg",
+      "sourceLabel": "Word of Mouth",
+      "sourceUrl": "https://www.wordofmouth.com.au/reviews/agg-doors-hallam"
+    },
+    {
+      "name": "Nick S.",
+      "suburb": "Hallam",
+      "rating": 5,
+      "text": "Nick was polite, articulate and friendly. Garage door is working perfectly. I have used AGG for many years and always been pleased with the quality of service \u2014 technicians are always on time and helpful.",
+      "date": "2025",
+      "avatar": "/review-avatar-wordofmouth.svg",
+      "sourceLabel": "Word of Mouth",
+      "sourceUrl": "https://www.wordofmouth.com.au/reviews/agg-doors-hallam"
+    },
+    {
+      "name": "Nathan's Customer",
+      "suburb": "Melbourne",
+      "rating": 5,
+      "text": "It was so easy and comfortable dealing with AGG Doors. Nathan was polite and explained what I needed to know without the sales pitch. Will definitely go to them again.",
+      "date": "2025",
+      "avatar": "/review-avatar-wordofmouth.svg",
+      "sourceLabel": "Word of Mouth",
+      "sourceUrl": "https://www.wordofmouth.com.au/reviews/agg-doors-hallam"
     }
   ]
 }
