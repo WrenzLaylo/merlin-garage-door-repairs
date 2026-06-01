@@ -1,0 +1,58 @@
+{
+  "contact": {
+    "business": { "number": "(03) 8789 9375", "tel": "+61387899375" },
+    "emergency": { "number": "(03) 8789 9376", "tel": "+61387899376" }
+  },
+  "stats": {
+    "years": 20,
+    "reviews": 600,
+    "rating": 4.9,
+    "warrantyMonths": 12
+  },
+  "serviceAreas": {
+    "regions": [
+      "Eastern Suburbs",
+      "South-Eastern Suburbs",
+      "Northern Suburbs",
+      "Western Suburbs",
+      "Melbourne CBD"
+    ],
+    "suburbs": [
+      "Hallam",
+      "Dandenong",
+      "Berwick",
+      "Narre Warren",
+      "Cranbourne",
+      "Frankston",
+      "Glen Waverley",
+      "Ringwood",
+      "Bayswater",
+      "Pakenham",
+      "Moorabbin",
+      "Melbourne"
+    ]
+  },
+  "testimonials": [
+    {
+      "name": "Rebecca T.",
+      "suburb": "Berwick",
+      "rating": 5,
+      "text": "The Merlin motor was diagnosed quickly and repaired on the first visit. Clear pricing and no pressure.",
+      "date": "2026"
+    },
+    {
+      "name": "Sam K.",
+      "suburb": "Dandenong",
+      "rating": 5,
+      "text": "They paired new remotes, serviced the door, and made it much quieter. Very professional.",
+      "date": "2026"
+    },
+    {
+      "name": "Michelle L.",
+      "suburb": "Frankston",
+      "rating": 5,
+      "text": "Emergency callout after the door jammed open. The technician made it safe and fixed the issue.",
+      "date": "2026"
+    }
+  ]
+}
