@@ -28,6 +28,8 @@ export interface TestimonialItem {
   avatar?: string;
   sourceLabel?: string;
   sourceUrl?: string;
+  serviceType?: string;
+  reviewTitle?: string;
 }
 
 export interface WhyUsItem {

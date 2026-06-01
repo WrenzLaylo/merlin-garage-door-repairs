@@ -21,7 +21,7 @@ export default function ServiceAreas({ config }: { config: NetworkConfig }) {
             {config.serviceAreas.suburbs.map((suburb) => (
               <span
                 key={suburb}
-                className="rounded-full border border-ink-line bg-ink px-3.5 py-1.5 text-sm text-slate-300 transition-colors hover:border-teal/40 hover:text-teal-light"
+                className="rounded-full border border-ink-line bg-ink px-3.5 py-1.5 text-sm text-slate-300 transition-all duration-200 hover:-translate-y-0.5 hover:border-teal/40 hover:bg-ink-soft hover:text-teal-light"
               >
                 {suburb}
               </span>

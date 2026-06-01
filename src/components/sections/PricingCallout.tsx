@@ -17,14 +17,14 @@ export default function PricingCallout() {
               </h2>
             </div>
             <div className="grid gap-5 p-8 sm:grid-cols-2 lg:p-10">
-              <div className="rounded-2xl border border-ink-line bg-ink/50 p-5">
+              <div className="rounded-2xl border border-ink-line bg-ink/50 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-teal/30 hover:bg-ink/70">
                 <ShieldCheck className="text-teal-light" />
                 <h3 className="mt-4 font-display font-semibold text-white">Repair-first diagnosis</h3>
                 <p className="mt-2 text-sm text-slate-400">
                   If repair makes sense, we fix it. If replacement is better value, we tell you.
                 </p>
               </div>
-              <div className="rounded-2xl border border-ink-line bg-ink/50 p-5">
+              <div className="rounded-2xl border border-ink-line bg-ink/50 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-teal/30 hover:bg-ink/70">
                 <ShieldCheck className="text-teal-light" />
                 <h3 className="mt-4 font-display font-semibold text-white">
                   {PROMISES.warrantyMonths}-month workmanship warranty

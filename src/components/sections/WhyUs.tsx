@@ -27,7 +27,7 @@ export default function WhyUs() {
                 <img
                   src="/why-merlin-specialists.webp"
                   alt="Technician servicing a Merlin-style garage door opener"
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover transition-transform duration-700 hover:scale-[1.03]"
                   loading="lazy"
                 />
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink via-ink/70 to-transparent p-5">
@@ -49,8 +49,8 @@ export default function WhyUs() {
               const Icon = ICONS[item.icon] ?? Award;
               return (
                 <ScrollReveal key={item.title} delay={index * 0.05}>
-                  <div className="card h-full">
-                    <span className="mb-4 grid h-14 w-14 place-items-center rounded-2xl bg-teal/10 text-teal-light">
+                  <div className="card-hover group h-full">
+                    <span className="mb-4 grid h-14 w-14 place-items-center rounded-2xl bg-teal/10 text-teal-light transition-all duration-300 group-hover:bg-teal/20 group-hover:scale-110">
                       <Icon size={26} />
                     </span>
                     <h3 className="font-display font-semibold text-white">{item.title}</h3>

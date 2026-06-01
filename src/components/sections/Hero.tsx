@@ -127,7 +127,7 @@ export default function Hero({ config }: { config: NetworkConfig }) {
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.45, delay: 0.42 }}
-                className="rounded-xl bg-ink p-3"
+                className="rounded-xl bg-ink p-3 transition-all duration-300 hover:-translate-y-0.5 hover:bg-ink-line"
               >
                 <p className="font-display text-xl font-bold text-teal-light">
                   {config.stats.years}+
@@ -138,7 +138,7 @@ export default function Hero({ config }: { config: NetworkConfig }) {
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.45, delay: 0.5 }}
-                className="rounded-xl bg-ink p-3"
+                className="rounded-xl bg-ink p-3 transition-all duration-300 hover:-translate-y-0.5 hover:bg-ink-line"
               >
                 <p className="font-display text-xl font-bold text-teal-light">
                   {config.stats.warrantyMonths}
@@ -149,7 +149,7 @@ export default function Hero({ config }: { config: NetworkConfig }) {
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.45, delay: 0.58 }}
-                className="rounded-xl bg-ink p-3"
+                className="rounded-xl bg-ink p-3 transition-all duration-300 hover:-translate-y-0.5 hover:bg-ink-line"
               >
                 <p className="font-display text-xl font-bold text-teal-light">
                   {config.stats.rating}
@@ -158,7 +158,7 @@ export default function Hero({ config }: { config: NetworkConfig }) {
               </motion.div>
             </div>
 
-            <div className="mt-5 flex items-center gap-3 rounded-xl border border-flame/30 bg-flame/10 p-4 text-sm text-flame">
+            <div className="mt-5 flex items-center gap-3 rounded-xl border border-flame/30 bg-flame/10 p-4 text-sm text-flame transition-all duration-300 hover:border-flame/50 hover:bg-flame/15">
               <Phone size={18} />
               <a
                 href={`tel:${config.contact.emergency.tel}`}

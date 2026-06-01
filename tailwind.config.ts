@@ -17,7 +17,7 @@ export default {
       },
       boxShadow: {
         glow: "0 0 40px -8px rgba(22,184,166,0.45)",
-        flame: "0 10px 30px -8px rgba(255,106,44,0.5)",
+        flame: "0 4px 12px -6px rgba(255,106,44,0.08)",
       },
       maxWidth: {
         container: "1200px",

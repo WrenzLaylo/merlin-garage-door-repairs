@@ -37,7 +37,7 @@ export default function Services() {
             const Icon = ICONS[service.icon] ?? Wrench;
             return (
               <ScrollReveal key={service.id} delay={index * 0.04}>
-                <article className="card group h-full overflow-hidden p-0 hover:border-teal/40">
+                <article className="card group h-full overflow-hidden p-0 transition-all duration-300 hover:-translate-y-1 hover:border-teal/40">
                   {service.image ? (
                     <div className="relative aspect-[16/9] overflow-hidden border-b border-ink-line">
                       <img
@@ -47,7 +47,7 @@ export default function Services() {
                         loading={index < 3 ? "eager" : "lazy"}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-transparent" />
-                      <span className="absolute bottom-4 left-4 grid h-12 w-12 place-items-center rounded-2xl border border-white/10 bg-ink/75 text-teal-light shadow-soft backdrop-blur">
+                      <span className="absolute bottom-4 left-4 grid h-12 w-12 place-items-center rounded-2xl border border-white/10 bg-ink/75 text-teal-light shadow-soft backdrop-blur transition-all duration-300 group-hover:bg-teal/20 group-hover:scale-110">
                         <Icon size={24} />
                       </span>
                       {service.badge ? (
@@ -58,7 +58,7 @@ export default function Services() {
                     </div>
                   ) : (
                     <div className="flex items-start justify-between gap-4">
-                      <span className="grid h-12 w-12 place-items-center rounded-2xl bg-teal/10 text-teal-light">
+                      <span className="grid h-12 w-12 place-items-center rounded-2xl bg-teal/10 text-teal-light transition-all duration-300 group-hover:bg-teal/20 group-hover:scale-110">
                         <Icon size={24} />
                       </span>
                       {service.badge ? (

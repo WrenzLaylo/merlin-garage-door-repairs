@@ -39,11 +39,11 @@
   }
 
   .btn-primary {
-    @apply btn bg-flame text-white shadow-flame hover:-translate-y-0.5 hover:bg-flame-dark;
+    @apply btn bg-flame text-white hover:-translate-y-0.5 hover:bg-flame-dark;
   }
 
   .btn-secondary {
-    @apply btn border border-teal/40 bg-teal/10 text-teal-light hover:bg-teal/20;
+    @apply btn border border-teal/40 bg-teal/10 text-teal-light hover:bg-teal/20 hover:-translate-y-0.5;
   }
 
   .btn-ghost {
@@ -55,7 +55,11 @@
   }
 
   .card {
-    @apply rounded-2xl border border-ink-line bg-ink-soft/70 p-6 transition-colors;
+    @apply rounded-2xl border border-ink-line bg-ink-soft/70 p-6 transition-all duration-300 hover:border-teal/30;
+  }
+
+  .card-hover {
+    @apply card hover:-translate-y-1 hover:bg-ink-soft;
   }
 
   .section {

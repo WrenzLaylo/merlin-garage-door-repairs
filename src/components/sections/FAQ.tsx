@@ -25,11 +25,11 @@ export default function FAQ() {
                 const isOpen = open === index;
                 return (
                   <ScrollReveal key={item.q} delay={index * 0.03}>
-                    <div className="card p-0">
+                    <div className="card p-0 hover:-translate-y-0.5">
                       <button
                         type="button"
                         onClick={() => setOpen(isOpen ? null : index)}
-                        className="flex w-full items-center justify-between gap-4 p-5 text-left"
+                        className="flex w-full items-center justify-between gap-4 p-5 text-left transition-colors duration-200 hover:bg-ink-soft/50"
                         aria-expanded={isOpen}
                       >
                         <span className="font-display font-semibold text-white">{item.q}</span>

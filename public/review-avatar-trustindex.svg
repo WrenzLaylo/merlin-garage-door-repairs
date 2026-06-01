@@ -1,12 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="Review avatar">
-  <defs>
-    <linearGradient id="g" x1="14" x2="82" y1="82" y2="14" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#29BDB2"/>
-      <stop offset=".55" stop-color="#123F47"/>
-      <stop offset="1" stop-color="#F45B1B"/>
-    </linearGradient>
-  </defs>
-  <rect width="96" height="96" rx="28" fill="#0A2226"/>
-  <circle cx="48" cy="48" r="31" fill="url(#g)" opacity=".95"/>
-  <text x="48" y="57" text-anchor="middle" font-family="Arial, sans-serif" font-size="27" font-weight="700" fill="#fff">TI</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="Trustindex">
+  <!-- Dark background -->
+  <rect width="96" height="96" rx="20" fill="#1a1a2e"/>
+  <!-- Shield shape -->
+  <path d="M48 10 L76 22 L76 48 C76 64 62 76 48 82 C34 76 20 64 20 48 L20 22 Z" fill="#00B67A"/>
+  <!-- White checkmark -->
+  <polyline points="33,48 44,59 63,37" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

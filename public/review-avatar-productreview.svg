@@ -1,11 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="Review avatar">
-  <defs>
-    <linearGradient id="g" x1="12" x2="84" y1="10" y2="86" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#29BDB2"/>
-      <stop offset="1" stop-color="#F45B1B"/>
-    </linearGradient>
-  </defs>
-  <rect width="96" height="96" rx="28" fill="#0A2226"/>
-  <circle cx="48" cy="48" r="31" fill="url(#g)" opacity=".9"/>
-  <text x="48" y="57" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#fff">PR</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="ProductReview.com.au">
+  <!-- Blue background rounded square -->
+  <rect width="96" height="96" rx="20" fill="#003087"/>
+  <!-- White PR letters -->
+  <text x="48" y="38" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="13" font-weight="900" fill="#fff" letter-spacing="1">PRODUCT</text>
+  <text x="48" y="53" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="13" font-weight="900" fill="#fff" letter-spacing="1">REVIEW</text>
+  <!-- Gold star row -->
+  <text x="48" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#FFD700">★★★★★</text>
 </svg>

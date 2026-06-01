@@ -13,7 +13,7 @@ export default function Brands() {
         <div className="mt-6 grid gap-3 sm:grid-cols-3 lg:grid-cols-6">
           {BRANDS.map((brand, index) => (
             <ScrollReveal key={brand.name} delay={index * 0.03}>
-              <div className="rounded-2xl border border-ink-line bg-ink-soft/60 p-4 text-center">
+              <div className="rounded-2xl border border-ink-line bg-ink-soft/60 p-4 text-center transition-all duration-300 hover:-translate-y-1 hover:border-teal/30 hover:bg-ink-soft">
                 <p className="font-display font-semibold text-white">{brand.name}</p>
                 <p className="mt-1 text-xs text-slate-500">{brand.subtitle}</p>
               </div>
