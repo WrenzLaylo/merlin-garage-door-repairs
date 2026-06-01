@@ -104,7 +104,7 @@ export const SERVICES: ServiceItem[] = [
     desc: "Replace worn belts, chains, sprockets, trolleys, and brackets, then safety-service the unit.",
     badge: null,
     features: ["Worn-part replacement", "Quiet and smooth", "Full safety service"],
-    image: "/service-merlin-repair.webp",
+    image: "/service-merlin-hardware.webp",
   },
   {
     id: "service",

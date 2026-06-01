@@ -2,13 +2,17 @@ import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import {
   AlertCircle,
+  Camera,
   Check,
   CheckCircle2,
   ChevronDown,
+  ClipboardCheck,
   FileImage,
   Loader2,
   Phone,
+  ShieldCheck,
   Upload,
+  Wrench,
   X,
 } from "lucide-react";
 import { CONTACT, FORM_OPTIONS } from "../../constants";
@@ -338,6 +342,34 @@ export default function Contact({ config }: { config: NetworkConfig }) {
           <p className="mt-6 text-sm text-slate-500">
             {CONTACT.address} | {CONTACT.hours}
           </p>
+
+          <div className="mt-10 rounded-3xl border border-ink-line bg-ink-soft/70 p-5 shadow-soft">
+            <div className="flex items-center gap-3">
+              <span className="grid h-11 w-11 place-items-center rounded-2xl bg-teal/10 text-teal-light">
+                <ClipboardCheck size={22} />
+              </span>
+              <div>
+                <h3 className="font-display text-lg font-semibold text-white">
+                  What helps us quote faster
+                </h3>
+                <p className="text-sm text-slate-500">A few details can save a callback.</p>
+              </div>
+            </div>
+            <div className="mt-5 grid gap-3 text-sm text-slate-300">
+              <div className="flex gap-3 rounded-2xl border border-ink-line bg-ink p-4">
+                <Camera className="mt-0.5 shrink-0 text-teal-light" size={18} />
+                <span>Upload a photo of the opener, remote, or warning light.</span>
+              </div>
+              <div className="flex gap-3 rounded-2xl border border-ink-line bg-ink p-4">
+                <Wrench className="mt-0.5 shrink-0 text-teal-light" size={18} />
+                <span>Tell us if it clicks, hums, opens halfway, or will not respond.</span>
+              </div>
+              <div className="flex gap-3 rounded-2xl border border-ink-line bg-ink p-4">
+                <ShieldCheck className="mt-0.5 shrink-0 text-teal-light" size={18} />
+                <span>We will confirm repair-first options before recommending replacement.</span>
+              </div>
+            </div>
+          </div>
         </ScrollReveal>
 
         <ScrollReveal direction="left">

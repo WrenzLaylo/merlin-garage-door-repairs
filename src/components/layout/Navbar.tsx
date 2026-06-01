@@ -11,15 +11,11 @@ export default function Navbar({ config }: { config: NetworkConfig }) {
     <header className="sticky top-0 z-40 border-b border-ink-line bg-ink/85 backdrop-blur-xl">
       <div className="container-x flex h-20 items-center justify-between gap-5">
         <a href="#top" className="flex items-center gap-3" aria-label={`${BUSINESS.name} home`}>
-          <span className="grid h-11 w-11 place-items-center rounded-2xl bg-gradient-to-br from-teal to-flame font-display text-lg font-bold text-white shadow-glow">
-            M
-          </span>
-          <span>
-            <span className="block font-display text-lg font-bold leading-tight text-white">
-              Merlin Repairs
-            </span>
-            <span className="block text-xs text-slate-400">Powered by {BUSINESS.parent}</span>
-          </span>
+          <img
+            src="/site-logo.svg"
+            alt={BUSINESS.name}
+            className="h-12 w-[225px] max-w-[56vw]"
+          />
         </a>
 
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Main navigation">

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 116" role="img" aria-label="Merlin Garage Door Repairs powered by AGG Doors">
+  <defs>
+    <linearGradient id="mark" x1="0" x2="1" y1="0" y2="1">
+      <stop stop-color="#29BDB2"/>
+      <stop offset="1" stop-color="#F45B1B"/>
+    </linearGradient>
+  </defs>
+  <rect x="3" y="8" width="92" height="92" rx="26" fill="#0A2226" stroke="#23333A" stroke-width="3"/>
+  <path d="M23 54 49 31l26 23" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="30" y="55" width="39" height="27" rx="4" fill="#102D33" stroke="#29BDB2" stroke-width="4"/>
+  <path d="M36 63h27M36 72h27" stroke="#8EEBE2" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="76" cy="76" r="15" fill="#F45B1B"/>
+  <path d="m68 76 6 6 12-15" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="116" y="48" font-family="Inter, Arial, sans-serif" font-weight="800" font-size="31" fill="#fff">Merlin Garage Door</text>
+  <text x="116" y="83" font-family="Inter, Arial, sans-serif" font-weight="800" font-size="31" fill="#29BDB2">Repairs</text>
+  <text x="281" y="83" font-family="Inter, Arial, sans-serif" font-weight="700" font-size="15" letter-spacing="3" fill="#94A3B8">POWERED BY AGG DOORS</text>
+</svg>
