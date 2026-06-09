@@ -23,8 +23,8 @@ export default function Hero({ config }: { config: NetworkConfig }) {
         className="absolute inset-0 -z-20 bg-[url('/hero-bg.jpg')] bg-cover bg-center"
         style={{ y: imageY, scale: 1.08 }}
       />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-ink via-ink/90 to-ink/55" />
-      <div className="absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-t from-ink to-transparent" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-canvas via-canvas/92 to-canvas/55" />
+      <div className="absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-t from-canvas to-transparent" />
 
       <div className="container-x grid min-h-[calc(100vh-5rem)] items-center gap-12 py-20 lg:grid-cols-[1.05fr_0.75fr]">
         <div>
@@ -34,7 +34,7 @@ export default function Hero({ config }: { config: NetworkConfig }) {
             transition={{ duration: 0.5 }}
             className="eyebrow"
           >
-            <Star size={14} className="fill-teal-light text-teal-light" />
+            <Star size={14} className="fill-gold text-gold" />
             {config.stats.rating}/5 from {config.stats.reviews}+ reviews
           </motion.span>
 
@@ -42,16 +42,16 @@ export default function Hero({ config }: { config: NetworkConfig }) {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, delay: 0.08 }}
-            className="mt-6 max-w-4xl font-display text-5xl font-bold leading-[0.95] text-white sm:text-6xl lg:text-7xl"
+            className="mt-6 max-w-4xl font-display text-5xl font-bold leading-[0.95] text-ink sm:text-6xl lg:text-7xl"
           >
-            Merlin garage door <span className="text-teal-light">repairs</span> in Melbourne.
+            Merlin garage door <span className="text-brand">repairs</span> in Melbourne.
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, delay: 0.16 }}
-            className="mt-6 max-w-2xl text-lg leading-8 text-slate-300"
+            className="mt-6 max-w-2xl text-lg leading-8 text-muted"
           >
             Same-day repairs, servicing, myQ setup, remote pairing, and new motor
             installs for Merlin openers. No Fix No Fee, backed by AGG Doors.
@@ -66,7 +66,7 @@ export default function Hero({ config }: { config: NetworkConfig }) {
             <a
               href={`tel:${config.contact.emergency.tel}`}
               onClick={() => trackCall("emergency")}
-              className="btn-primary text-base"
+              className="btn-accent text-base"
             >
               <Phone size={18} /> Call {config.contact.emergency.number}
             </a>
@@ -79,16 +79,16 @@ export default function Hero({ config }: { config: NetworkConfig }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.65, delay: 0.34 }}
-            className="mt-8 grid gap-3 text-sm text-slate-300 sm:grid-cols-3"
+            className="mt-8 grid gap-3 text-sm text-muted sm:grid-cols-3"
           >
             <span className="flex items-center gap-2">
-              <ShieldCheck size={17} className="text-teal-light" /> No Fix No Fee
+              <ShieldCheck size={17} className="text-brand" /> No Fix No Fee
             </span>
             <span className="flex items-center gap-2">
-              <Clock size={17} className="text-teal-light" /> Same-day and 24/7
+              <Clock size={17} className="text-brand" /> Same-day and 24/7
             </span>
             <span className="flex items-center gap-2">
-              <CheckCircle2 size={17} className="text-teal-light" /> Genuine Merlin parts
+              <CheckCircle2 size={17} className="text-brand" /> Genuine Merlin parts
             </span>
           </motion.div>
         </div>
@@ -100,20 +100,20 @@ export default function Hero({ config }: { config: NetworkConfig }) {
           style={{ y: panelY, rotate: panelRotate }}
           className="hidden lg:block"
         >
-          <div className="card border-teal/20 bg-ink-soft/85 shadow-glow backdrop-blur">
+          <div className="card border-line bg-surface/90 shadow-soft backdrop-blur">
             <div className="flex items-start justify-between gap-5">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-widest text-teal-light">
+                <p className="text-xs font-semibold uppercase tracking-widest text-brand-deep">
                   Fast quote
                 </p>
-                <h2 className="mt-2 font-display text-2xl font-semibold text-white">
+                <h2 className="mt-2 font-display text-2xl font-semibold text-ink">
                   Tell us your model and fault.
                 </h2>
-                <p className="mt-2 text-sm text-slate-400">
+                <p className="mt-2 text-sm text-muted">
                   We will call you back with the right next step for your Merlin opener.
                 </p>
               </div>
-              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-teal/15 text-teal-light">
+              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-brand/15 text-brand-deep">
                 <Sparkles size={24} />
               </span>
             </div>
@@ -127,38 +127,38 @@ export default function Hero({ config }: { config: NetworkConfig }) {
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.45, delay: 0.42 }}
-                className="rounded-xl bg-ink p-3 transition-all duration-300 hover:-translate-y-0.5 hover:bg-ink-line"
+                className="rounded-xl border border-line bg-brand-tint p-3 transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand/20"
               >
-                <p className="font-display text-xl font-bold text-teal-light">
+                <p className="font-display text-xl font-bold text-brand-deep">
                   {config.stats.years}+
                 </p>
-                <p className="text-xs text-slate-400">Years</p>
+                <p className="text-xs text-muted">Years</p>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.45, delay: 0.5 }}
-                className="rounded-xl bg-ink p-3 transition-all duration-300 hover:-translate-y-0.5 hover:bg-ink-line"
+                className="rounded-xl border border-line bg-brand-tint p-3 transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand/20"
               >
-                <p className="font-display text-xl font-bold text-teal-light">
+                <p className="font-display text-xl font-bold text-brand-deep">
                   {config.stats.warrantyMonths}
                 </p>
-                <p className="text-xs text-slate-400">Month warranty</p>
+                <p className="text-xs text-muted">Month warranty</p>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.45, delay: 0.58 }}
-                className="rounded-xl bg-ink p-3 transition-all duration-300 hover:-translate-y-0.5 hover:bg-ink-line"
+                className="rounded-xl border border-line bg-brand-tint p-3 transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand/20"
               >
-                <p className="font-display text-xl font-bold text-teal-light">
+                <p className="font-display text-xl font-bold text-brand-deep">
                   {config.stats.rating}
                 </p>
-                <p className="text-xs text-slate-400">Rating</p>
+                <p className="text-xs text-muted">Rating</p>
               </motion.div>
             </div>
 
-            <div className="mt-5 flex items-center gap-3 rounded-xl border border-flame/30 bg-flame/10 p-4 text-sm text-flame transition-all duration-300 hover:border-flame/50 hover:bg-flame/15">
+            <div className="mt-5 flex items-center gap-3 rounded-xl border border-accent/30 bg-accent-tint p-4 text-sm text-accent transition-all duration-300 hover:border-accent/50 hover:bg-accent/15">
               <Phone size={18} />
               <a
                 href={`tel:${config.contact.emergency.tel}`}

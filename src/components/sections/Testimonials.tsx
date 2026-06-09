@@ -19,7 +19,7 @@ function StarRow({ count, size = 14 }: { count: number; size?: number }) {
           key={i}
           size={size}
           fill={i < count ? "currentColor" : "none"}
-          className={i < count ? "text-flame" : "text-slate-600"}
+          className={i < count ? "text-gold" : "text-slate-300"}
         />
       ))}
     </div>
@@ -29,14 +29,14 @@ function StarRow({ count, size = 14 }: { count: number; size?: number }) {
 function RatingBar({ label, value }: { label: string; value: number }) {
   return (
     <div className="flex items-center gap-2 text-xs">
-      <span className="w-14 shrink-0 text-slate-400">{label}</span>
-      <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-ink-line">
+      <span className="w-14 shrink-0 text-muted">{label}</span>
+      <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-line">
         <div
-          className="h-full rounded-full bg-flame"
+          className="h-full rounded-full bg-brand"
           style={{ width: `${(value / 5) * 100}%` }}
         />
       </div>
-      <span className="w-8 font-semibold text-slate-300">{value}/5</span>
+      <span className="w-8 font-semibold text-muted">{value}/5</span>
     </div>
   );
 }
@@ -57,20 +57,20 @@ function ReviewCard({ review }: { review: BuiltReview }) {
   const isLong = review.text.length > 140;
 
   return (
-    <div className="card flex h-full flex-col hover:-translate-y-1 hover:bg-ink-soft">
+    <div className="card flex h-full flex-col hover:-translate-y-1 hover:shadow-soft">
       <div className="mb-3 flex items-start gap-2">
         <Quote
           size={18}
-          className="mt-0.5 shrink-0 text-teal/40"
+          className="mt-0.5 shrink-0 text-brand/40"
           aria-hidden="true"
         />
         {review.reviewTitle && (
-          <p className="text-sm font-bold text-white">{review.reviewTitle}</p>
+          <p className="text-sm font-bold text-ink">{review.reviewTitle}</p>
         )}
       </div>
 
       <div className="mb-4 flex-1">
-        <p className="text-sm leading-relaxed text-slate-300">
+        <p className="text-sm leading-relaxed text-muted">
           &ldquo;
           {isLong && !expanded ? review.text.slice(0, 140) + "…" : review.text}
           &rdquo;
@@ -78,7 +78,7 @@ function ReviewCard({ review }: { review: BuiltReview }) {
         {isLong && (
           <button
             onClick={() => setExpanded(!expanded)}
-            className="mt-1.5 text-xs font-semibold text-teal-light transition-colors hover:text-white"
+            className="mt-1.5 text-xs font-semibold text-brand-deep transition-colors hover:text-brand"
             aria-expanded={expanded}
           >
             {expanded ? "Show less ↑" : "Read more ↓"}
@@ -86,7 +86,7 @@ function ReviewCard({ review }: { review: BuiltReview }) {
         )}
       </div>
 
-      <div className="mb-4 space-y-2 border-y border-ink-line py-3">
+      <div className="mb-4 space-y-2 border-y border-line py-3">
         <RatingBar label="Quality" value={5} />
         <RatingBar label="Service" value={5} />
         <RatingBar label="Value" value={5} />
@@ -94,11 +94,11 @@ function ReviewCard({ review }: { review: BuiltReview }) {
 
       <div className="flex items-center justify-between gap-3">
         <div className="flex items-center gap-2.5">
-          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-teal/10 text-sm font-bold text-teal-light">
+          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-brand/10 text-sm font-bold text-brand-deep">
             {review.initials}
           </span>
           <div>
-            <p className="text-sm font-semibold text-white">{review.name}</p>
+            <p className="text-sm font-semibold text-ink">{review.name}</p>
             <p className="text-xs text-slate-500">
               {review.suburb}
               {review.date ? ` · ${review.date}` : ""}
@@ -110,7 +110,7 @@ function ReviewCard({ review }: { review: BuiltReview }) {
 
       <div className="mt-3 flex flex-wrap items-center justify-between gap-2">
         {review.serviceType && (
-          <span className="inline-flex items-center rounded-full bg-teal/10 px-2.5 py-0.5 text-[11px] font-medium text-teal-light">
+          <span className="inline-flex items-center rounded-full bg-brand-tint px-2.5 py-0.5 text-[11px] font-medium text-brand-deep">
             {review.serviceType}
           </span>
         )}
@@ -119,7 +119,7 @@ function ReviewCard({ review }: { review: BuiltReview }) {
             href={review.sourceUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-auto inline-flex items-center gap-1 text-[11px] font-semibold text-slate-500 transition-colors hover:text-teal-light"
+            className="ml-auto inline-flex items-center gap-1 text-[11px] font-semibold text-slate-500 transition-colors hover:text-brand-deep"
           >
             <ExternalLink size={10} aria-hidden="true" />
             Verified
@@ -201,15 +201,15 @@ export default function Testimonials({ config }: { config: NetworkConfig }) {
         .carousel-exit { opacity: 0; transition: opacity 0.18s ease; }
       `}</style>
 
-      <section id="testimonials" className="section bg-ink-soft/35">
+      <section id="testimonials" className="section bg-canvas">
         <div className="container-x">
           {/* ── Header ── */}
           <ScrollReveal className="mx-auto max-w-2xl text-center">
             <span className="eyebrow mb-4">Real Reviews</span>
             <h2 className="h-section">Trusted by Melbourne homeowners.</h2>
-            <p className="mt-3 text-slate-400">
+            <p className="mt-3 text-muted">
               Every review below is real and verified. All{" "}
-              <span className="font-semibold text-white">
+              <span className="font-semibold text-ink">
                 {config.stats.reviews}+
               </span>{" "}
               reviews are 5-star.
@@ -222,7 +222,7 @@ export default function Testimonials({ config }: { config: NetworkConfig }) {
                 href={WOMO_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 rounded-2xl border border-ink-line bg-ink-soft px-4 py-2.5 transition hover:border-[#ff4800]/40 hover:bg-ink"
+                className="inline-flex items-center gap-2.5 rounded-2xl border border-line bg-surface px-4 py-2.5 shadow-card transition hover:border-[#ff4800]/40 hover:bg-brand-tint"
                 aria-label="View AGG Doors reviews on Word of Mouth"
               >
                 {/* Wrap SVG in a pill so the horizontal wordmark has a contained bg */}
@@ -237,7 +237,7 @@ export default function Testimonials({ config }: { config: NetworkConfig }) {
                 <div className="text-left">
                   <div className="flex items-center gap-1">
                     <StarRow count={5} size={11} />
-                    <span className="text-[11px] font-bold text-white">
+                    <span className="text-[11px] font-bold text-ink">
                       4.9
                     </span>
                   </div>
@@ -245,7 +245,7 @@ export default function Testimonials({ config }: { config: NetworkConfig }) {
                     {config.stats.reviews}+ reviews
                   </p>
                 </div>
-                <ExternalLink size={12} className="text-slate-600" />
+                <ExternalLink size={12} className="text-slate-400" />
               </a>
 
               {/* ProductReview */}
@@ -253,7 +253,7 @@ export default function Testimonials({ config }: { config: NetworkConfig }) {
                 href="https://www.productreview.com.au/listings/agg-doors"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 rounded-2xl border border-ink-line bg-ink-soft px-4 py-2.5 transition hover:border-[#003087]/50 hover:bg-ink"
+                className="inline-flex items-center gap-2.5 rounded-2xl border border-line bg-surface px-4 py-2.5 shadow-card transition hover:border-[#003087]/50 hover:bg-brand-tint"
                 aria-label="View AGG Doors reviews on ProductReview.com.au"
               >
                 <img
@@ -262,15 +262,15 @@ export default function Testimonials({ config }: { config: NetworkConfig }) {
                   className="h-9 w-9 rounded-xl shrink-0"
                 />
                 <div className="text-left">
-                  <p className="text-[11px] font-semibold text-white">
+                  <p className="text-[11px] font-semibold text-ink">
                     ProductReview
                   </p>
                   <div className="flex items-center gap-1">
                     <StarRow count={5} size={11} />
-                    <span className="text-[11px] text-slate-400">4.8</span>
+                    <span className="text-[11px] text-muted">4.8</span>
                   </div>
                 </div>
-                <ExternalLink size={12} className="text-slate-600" />
+                <ExternalLink size={12} className="text-slate-400" />
               </a>
             </div>
           </ScrollReveal>
@@ -296,7 +296,7 @@ export default function Testimonials({ config }: { config: NetworkConfig }) {
                       stopAuto();
                       slide("prev");
                     }}
-                    className="absolute -left-3 top-1/2 z-10 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full border border-ink-line bg-ink-soft text-slate-400 shadow-lg transition hover:border-teal/50 hover:bg-ink hover:text-white md:-left-6"
+                    className="absolute -left-3 top-1/2 z-10 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full border border-line bg-surface text-muted shadow-lg transition hover:border-brand/50 hover:bg-brand-tint hover:text-brand-deep md:-left-6"
                     aria-label="Previous reviews"
                   >
                     <ChevronLeft size={20} />
@@ -306,7 +306,7 @@ export default function Testimonials({ config }: { config: NetworkConfig }) {
                       stopAuto();
                       slide("next");
                     }}
-                    className="absolute -right-3 top-1/2 z-10 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full border border-ink-line bg-ink-soft text-slate-400 shadow-lg transition hover:border-teal/50 hover:bg-ink hover:text-white md:-right-6"
+                    className="absolute -right-3 top-1/2 z-10 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full border border-line bg-surface text-muted shadow-lg transition hover:border-brand/50 hover:bg-brand-tint hover:text-brand-deep md:-right-6"
                     aria-label="Next reviews"
                   >
                     <ChevronRight size={20} />
@@ -363,8 +363,8 @@ export default function Testimonials({ config }: { config: NetworkConfig }) {
                       aria-label={`Go to review ${idx + 1}`}
                       className={`rounded-full transition-all duration-300 ${
                         idx === safeStart
-                          ? "h-2 w-6 bg-teal"
-                          : "h-2 w-2 bg-ink-line hover:bg-slate-500"
+                          ? "h-2 w-6 bg-brand"
+                          : "h-2 w-2 bg-line hover:bg-slate-400"
                       }`}
                     />
                   ))}

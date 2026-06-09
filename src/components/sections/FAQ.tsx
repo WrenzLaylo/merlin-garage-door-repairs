@@ -14,7 +14,7 @@ export default function FAQ() {
             <ScrollReveal>
               <span className="eyebrow mb-4">FAQ</span>
               <h2 className="h-section">Common questions.</h2>
-              <p className="mt-3 max-w-2xl text-slate-400">
+              <p className="mt-3 max-w-2xl text-muted">
                 Not sure if it is a remote, safety beam, gear, belt, or motor fault?
                 These are the questions we hear most before a quote request.
               </p>
@@ -29,13 +29,13 @@ export default function FAQ() {
                       <button
                         type="button"
                         onClick={() => setOpen(isOpen ? null : index)}
-                        className="flex w-full items-center justify-between gap-4 p-5 text-left transition-colors duration-200 hover:bg-ink-soft/50"
+                        className="flex w-full items-center justify-between gap-4 p-5 text-left transition-colors duration-200 hover:bg-brand-tint/60"
                         aria-expanded={isOpen}
                       >
-                        <span className="font-display font-semibold text-white">{item.q}</span>
+                        <span className="font-display font-semibold text-ink">{item.q}</span>
                         <ChevronDown
                           size={20}
-                          className={`shrink-0 text-teal transition-transform ${
+                          className={`shrink-0 text-brand transition-transform ${
                             isOpen ? "rotate-180" : ""
                           }`}
                         />
@@ -45,7 +45,7 @@ export default function FAQ() {
                           isOpen ? "grid-rows-[1fr] pb-5" : "grid-rows-[0fr]"
                         }`}
                       >
-                        <p className="overflow-hidden text-sm text-slate-400">{item.a}</p>
+                        <p className="overflow-hidden text-sm text-muted">{item.a}</p>
                       </div>
                     </div>
                   </ScrollReveal>
@@ -63,22 +63,22 @@ export default function FAQ() {
                   className="h-full w-full object-cover"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-transparent" />
-                <span className="absolute left-5 top-5 grid h-12 w-12 place-items-center rounded-2xl bg-teal/90 text-white shadow-soft">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                <span className="absolute left-5 top-5 grid h-12 w-12 place-items-center rounded-2xl bg-brand text-white shadow-soft">
                   <HelpCircle size={24} />
                 </span>
               </div>
               <div className="p-6">
-                <h3 className="font-display text-2xl font-semibold text-white">
+                <h3 className="font-display text-2xl font-semibold text-ink">
                   Still unsure what to book?
                 </h3>
-                <p className="mt-3 text-sm text-slate-400">
+                <p className="mt-3 text-sm text-muted">
                   Send a photo and a short description. We will route it to the right
                   Merlin repair technician before the visit.
                 </p>
-                <div className="mt-5 rounded-2xl border border-teal/20 bg-teal/10 p-4 text-sm text-slate-300">
+                <div className="mt-5 rounded-2xl border border-brand/20 bg-brand-tint p-4 text-sm text-muted">
                   <div className="flex gap-3">
-                    <ClipboardCheck className="mt-0.5 shrink-0 text-teal-light" size={18} />
+                    <ClipboardCheck className="mt-0.5 shrink-0 text-brand-deep" size={18} />
                     <span>Photos, model numbers, and symptoms help us quote faster.</span>
                   </div>
                 </div>

@@ -48,6 +48,17 @@ export interface NavLink {
   href: string;
 }
 
+export interface ShopProduct {
+  id: string;
+  title: string;
+  price: string;
+  image: string;
+  href: string;
+  tag: string;
+  compatibility: string;
+  note: string;
+}
+
 export const CONTACT = {
   email: "enquiries@aggdoors.com.au",
   address: "Greater Melbourne, VIC",
@@ -65,10 +76,94 @@ export const BUSINESS = {
 
 export const NAV_LINKS: NavLink[] = [
   { label: "Services", href: "#services" },
+  { label: "Parts shop", href: "#parts-shop" },
   { label: "How it works", href: "#how-it-works" },
   { label: "Reviews", href: "#testimonials" },
   { label: "Service areas", href: "#service-areas" },
   { label: "FAQ", href: "#faq" },
+];
+
+export const SHOP_PRODUCTS: ShopProduct[] = [
+  {
+    id: "straight-arm-bracket",
+    title: "Merlin 230T Straight Arm Bracket Straight",
+    price: "$39.95",
+    image: "/assets/shop/merlin-spare-01-merlin-230t-straight-arm-bracket-straight.webp",
+    href: "https://shop.aggdoors.com.au/products/merlin-230t-straight-arm-bracket-straight",
+    tag: "Hardware",
+    compatibility: "230T",
+    note: "Straight replacement bracket for older tilt-door assemblies.",
+  },
+  {
+    id: "red-push-button",
+    title: "Merlin 230T & 430R Red Square Push Button (USED)",
+    price: "$29.95",
+    image: "/assets/shop/merlin-spare-02-merlin-230t-430r-red-square-push-button-used.webp",
+    href: "https://shop.aggdoors.com.au/products/merlin-230t-430r-red-square-push-button-used",
+    tag: "Controls",
+    compatibility: "230T / 430R",
+    note: "Handy for restoring worn controls without replacing the full opener.",
+  },
+  {
+    id: "limit-gear",
+    title: "Merlin 430R and MR1000 Mounted Limit Gear Assembly (USED)",
+    price: "$69.95",
+    image: "/assets/shop/merlin-spare-03-merlin-430r-and-mr1000-mounted-limit-gear-assembly-used.webp",
+    href: "https://shop.aggdoors.com.au/products/merlin-430r-and-mr1000-mounted-limit-gear-assembly-used",
+    tag: "Limits",
+    compatibility: "430R / MR1000",
+    note: "For openers losing their travel positions or stopping in the wrong spot.",
+  },
+  {
+    id: "drive-fork",
+    title: "Merlin 430R & MR1000 Bolt-On Drive Fork (USED)",
+    price: "$59.95",
+    image: "/assets/shop/merlin-spare-04-merlin-430r-mr1000-bolt-on-drive-fork-used.webp",
+    href: "https://shop.aggdoors.com.au/products/merlin-430r-mr1000-bolt-on-drive-fork-used",
+    tag: "Drive parts",
+    compatibility: "430R / MR1000",
+    note: "A small drive component that can stop an otherwise healthy motor doing its job.",
+  },
+  {
+    id: "disengagement-handle",
+    title: "Merlin 230T & 430R Disengagement Handle & Pull Rope Assembly (USED)",
+    price: "$24.95",
+    image: "/assets/shop/merlin-spare-05-merlin-230t-430r-disengagement-handle-pull-rope-assembly-used.webp",
+    href: "https://shop.aggdoors.com.au/products/merlin-230t-430r-disengagement-handle-pull-rope-assembly-used",
+    tag: "Safety release",
+    compatibility: "230T / 430R",
+    note: "Replace missing or brittle emergency-release handles before they fail.",
+  },
+  {
+    id: "old-style-limit",
+    title: "Merlin 230T Limit Assembly Old Style (USED)",
+    price: "$49.95",
+    image: "/assets/shop/merlin-spare-06-merlin-230t-limit-assembly-old-style-used.webp",
+    href: "https://shop.aggdoors.com.au/products/merlin-230t-limit-assembly-old-style-used",
+    tag: "Legacy repair",
+    compatibility: "230T",
+    note: "Useful when a legacy opener needs a targeted repair rather than a full replacement.",
+  },
+  {
+    id: "battery-backup",
+    title: "Merlin Battery Backup 24V",
+    price: "$162.00",
+    image: "/assets/shop/merlin-spare-07-merlin-battery-backup-24v.webp",
+    href: "https://shop.aggdoors.com.au/products/merlin-battery-backup-24v",
+    tag: "Upgrade",
+    compatibility: "Selected Merlin openers",
+    note: "Keeps the door moving during power interruptions when installed on compatible motors.",
+  },
+  {
+    id: "ir-beams",
+    title: "Merlin 774ANZ IR Beams Protector System",
+    price: "$135.00",
+    image: "/assets/shop/merlin-spare-09-merlin-774anz-ir-beams-protector-system.webp",
+    href: "https://shop.aggdoors.com.au/products/merlin-774anz-ir-beams-protector-system",
+    tag: "Safety beams",
+    compatibility: "Merlin protector system",
+    note: "Professional safety-beam upgrade for safer automatic closing.",
+  },
 ];
 
 export const SERVICES: ServiceItem[] = [

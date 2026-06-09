@@ -116,14 +116,14 @@ function Dropdown({ label, value, options, onChange, error }: DropdownProps) {
         aria-activedescendant={open ? `${id.current}-opt-${focused}` : undefined}
         aria-invalid={Boolean(error)}
         aria-describedby={error ? `${id.current}-err` : undefined}
-        className={`flex w-full items-center justify-between rounded-xl border bg-ink px-4 py-3 text-left ${
-          error ? "border-flame" : "border-ink-line"
+        className={`flex w-full items-center justify-between rounded-xl border bg-surface px-4 py-3 text-left ${
+          error ? "border-accent" : "border-line"
         }`}
       >
-        <span className={value ? "text-white" : "text-slate-500"}>{value || "Select..."}</span>
+        <span className={value ? "text-ink" : "text-slate-400"}>{value || "Select..."}</span>
         <ChevronDown
           size={18}
-          className={`text-slate-400 transition-transform ${open ? "rotate-180" : ""}`}
+          className={`text-muted transition-transform ${open ? "rotate-180" : ""}`}
           aria-hidden="true"
         />
       </button>
@@ -133,7 +133,7 @@ function Dropdown({ label, value, options, onChange, error }: DropdownProps) {
           id={listId}
           role="listbox"
           aria-labelledby={`${id.current}-label`}
-          className="absolute z-20 mt-1 max-h-56 w-full overflow-auto rounded-xl border border-ink-line bg-ink-soft py-1 shadow-2xl"
+          className="absolute z-20 mt-1 max-h-56 w-full overflow-auto rounded-xl border border-line bg-surface py-1 shadow-2xl"
         >
           {options.map((option, i) => (
             <li
@@ -142,13 +142,13 @@ function Dropdown({ label, value, options, onChange, error }: DropdownProps) {
               role="option"
               aria-selected={value === option}
               className={`flex cursor-pointer items-center justify-between px-4 py-2.5 text-sm ${
-                i === focused ? "bg-ink text-white" : "text-slate-200 hover:bg-ink"
+                i === focused ? "bg-brand-tint text-ink" : "text-ink hover:bg-brand-tint"
               }`}
               onMouseEnter={() => setFocused(i)}
               onClick={() => select(option)}
             >
               {option}
-              {value === option ? <Check size={16} className="text-teal" aria-hidden="true" /> : null}
+              {value === option ? <Check size={16} className="text-brand-deep" aria-hidden="true" /> : null}
             </li>
           ))}
         </ul>
@@ -179,8 +179,8 @@ function Chips({ label, value, options, onChange }: ChipsProps) {
               onClick={() => onChange(option)}
               className={`rounded-full border px-3.5 py-1.5 text-sm transition-colors ${
                 active
-                  ? "border-teal bg-teal/15 text-teal-light"
-                  : "border-ink-line text-slate-300 hover:border-teal/40"
+                  ? "border-brand bg-brand-tint text-brand-deep"
+                  : "border-line text-ink hover:border-brand/40"
               }`}
             >
               {option}
@@ -244,7 +244,7 @@ export default function Contact({ config }: { config: NetworkConfig }) {
       if (window.turnstile && turnstileRef.current && widgetId.current === null) {
         widgetId.current = window.turnstile.render(turnstileRef.current, {
           sitekey: TURNSTILE_KEY,
-          theme: "dark",
+          theme: "light",
           callback: () => setSubmitError(""),
           "expired-callback": () => setSubmitError("Please complete the spam protection check again."),
           "error-callback": () => setSubmitError("Spam protection could not load. Please refresh and try again."),
@@ -346,7 +346,7 @@ export default function Contact({ config }: { config: NetworkConfig }) {
         <ScrollReveal>
           <span className="eyebrow mb-4">Get a quote</span>
           <h2 className="h-section">Request your free quote.</h2>
-          <p className="mt-3 text-slate-400">
+          <p className="mt-3 text-muted">
             Tell us about your Merlin opener and we will get back to you fast. Prefer to
             talk? Call us any time.
           </p>
@@ -354,9 +354,9 @@ export default function Contact({ config }: { config: NetworkConfig }) {
             <a
               href={`tel:${config.contact.emergency.tel}`}
               onClick={() => trackCall("emergency")}
-              className="flex items-center gap-3 text-slate-200 hover:text-teal-light"
+              className="flex items-center gap-3 text-ink hover:text-brand-deep"
             >
-              <span className="grid h-10 w-10 place-items-center rounded-xl bg-flame/15 text-flame">
+              <span className="grid h-10 w-10 place-items-center rounded-xl bg-accent-tint text-accent">
                 <Phone size={18} />
               </span>
               <span>
@@ -369,9 +369,9 @@ export default function Contact({ config }: { config: NetworkConfig }) {
             <a
               href={`tel:${config.contact.business.tel}`}
               onClick={() => trackCall("business")}
-              className="flex items-center gap-3 text-slate-200 hover:text-teal-light"
+              className="flex items-center gap-3 text-ink hover:text-brand-deep"
             >
-              <span className="grid h-10 w-10 place-items-center rounded-xl bg-teal/15 text-teal-light">
+              <span className="grid h-10 w-10 place-items-center rounded-xl bg-brand/15 text-brand-deep">
                 <Phone size={18} />
               </span>
               <span>
@@ -386,29 +386,29 @@ export default function Contact({ config }: { config: NetworkConfig }) {
             {CONTACT.address} | {CONTACT.hours}
           </p>
 
-          <div className="mt-10 rounded-3xl border border-ink-line bg-ink-soft/70 p-5 shadow-soft">
+          <div className="mt-10 rounded-3xl border border-line bg-surface p-5 shadow-soft">
             <div className="flex items-center gap-3">
-              <span className="grid h-11 w-11 place-items-center rounded-2xl bg-teal/10 text-teal-light">
+              <span className="grid h-11 w-11 place-items-center rounded-2xl bg-brand/10 text-brand-deep">
                 <ClipboardCheck size={22} />
               </span>
               <div>
-                <h3 className="font-display text-lg font-semibold text-white">
+                <h3 className="font-display text-lg font-semibold text-ink">
                   What helps us quote faster
                 </h3>
                 <p className="text-sm text-slate-500">A few details can save a callback.</p>
               </div>
             </div>
-            <div className="mt-5 grid gap-3 text-sm text-slate-300">
-              <div className="flex gap-3 rounded-2xl border border-ink-line bg-ink p-4">
-                <Camera className="mt-0.5 shrink-0 text-teal-light" size={18} />
+            <div className="mt-5 grid gap-3 text-sm text-muted">
+              <div className="flex gap-3 rounded-2xl border border-line bg-canvas p-4">
+                <Camera className="mt-0.5 shrink-0 text-brand-deep" size={18} />
                 <span>Upload a photo of the opener, remote, or warning light.</span>
               </div>
-              <div className="flex gap-3 rounded-2xl border border-ink-line bg-ink p-4">
-                <Wrench className="mt-0.5 shrink-0 text-teal-light" size={18} />
+              <div className="flex gap-3 rounded-2xl border border-line bg-canvas p-4">
+                <Wrench className="mt-0.5 shrink-0 text-brand-deep" size={18} />
                 <span>Tell us if it clicks, hums, opens halfway, or will not respond.</span>
               </div>
-              <div className="flex gap-3 rounded-2xl border border-ink-line bg-ink p-4">
-                <ShieldCheck className="mt-0.5 shrink-0 text-teal-light" size={18} />
+              <div className="flex gap-3 rounded-2xl border border-line bg-canvas p-4">
+                <ShieldCheck className="mt-0.5 shrink-0 text-brand-deep" size={18} />
                 <span>We will confirm repair-first options before recommending replacement.</span>
               </div>
             </div>
@@ -418,9 +418,9 @@ export default function Contact({ config }: { config: NetworkConfig }) {
         <ScrollReveal direction="left">
           {status === "success" ? (
             <div className="card flex flex-col items-center justify-center gap-3 py-16 text-center">
-              <CheckCircle2 size={48} className="text-teal" />
-              <h3 className="font-display text-xl font-semibold text-white">Thanks, we have it.</h3>
-              <p className="text-sm text-slate-400">
+              <CheckCircle2 size={48} className="text-brand" />
+              <h3 className="font-display text-xl font-semibold text-ink">Thanks, we have it.</h3>
+              <p className="text-sm text-muted">
                 We will be in touch shortly. For urgent issues, call{" "}
                 {config.contact.emergency.number}.
               </p>
@@ -548,18 +548,18 @@ export default function Contact({ config }: { config: NetworkConfig }) {
 
               <div>
                 <label className="field-label">Photo (optional)</label>
-                <div className="rounded-2xl border border-dashed border-ink-line bg-ink p-3 transition-colors hover:border-teal/40">
+                <div className="rounded-2xl border border-dashed border-line bg-canvas p-3 transition-colors hover:border-brand/40">
                   <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                     <button
                       type="button"
                       onClick={() => fileRef.current?.click()}
-                      className="flex min-w-0 flex-1 items-center gap-3 rounded-xl bg-ink-soft/80 px-4 py-3 text-left transition hover:bg-ink-soft"
+                      className="flex min-w-0 flex-1 items-center gap-3 rounded-xl bg-surface px-4 py-3 text-left shadow-card transition hover:bg-brand-tint"
                     >
-                      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-teal/10 text-teal-light">
+                      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-brand/10 text-brand-deep">
                         {fileName ? <FileImage size={18} /> : <Upload size={18} />}
                       </span>
                       <span className="min-w-0">
-                        <span className="block truncate text-sm font-semibold text-white">
+                        <span className="block truncate text-sm font-semibold text-ink">
                           {fileName || "Upload a photo of your opener"}
                         </span>
                         <span className="mt-0.5 block text-xs text-slate-500">
@@ -571,7 +571,7 @@ export default function Contact({ config }: { config: NetworkConfig }) {
                       <button
                         type="button"
                         onClick={removeFile}
-                        className="inline-flex items-center justify-center gap-2 rounded-xl border border-flame/30 px-4 py-3 text-sm font-semibold text-flame transition hover:bg-flame/10"
+                        className="inline-flex items-center justify-center gap-2 rounded-xl border border-accent/30 px-4 py-3 text-sm font-semibold text-accent transition hover:bg-accent/10"
                       >
                         <X size={16} /> Remove
                       </button>
@@ -593,7 +593,7 @@ export default function Contact({ config }: { config: NetworkConfig }) {
               {HAS_TURNSTILE ? (
                 <div ref={turnstileRef} className="cf-turnstile min-h-[65px]" />
               ) : (
-                <p className="rounded-xl border border-flame/30 bg-flame/10 px-4 py-3 text-sm text-flame">
+                <p className="rounded-xl border border-accent/30 bg-accent-tint px-4 py-3 text-sm text-accent">
                   Add your Cloudflare Turnstile site key in .env.local before live submissions.
                 </p>
               )}
@@ -609,7 +609,7 @@ export default function Contact({ config }: { config: NetworkConfig }) {
               </button>
 
               {status === "error" ? (
-                <p className="flex items-center gap-2 text-sm text-flame">
+                <p className="flex items-center gap-2 text-sm text-accent">
                   <AlertCircle size={16} /> {submitError || "Something went wrong."} Please call{" "}
                   {config.contact.emergency.number} if urgent.
                 </p>

@@ -5,41 +5,41 @@ import { trackCall } from "../../utils/analytics";
 
 export default function Footer({ config }: { config: NetworkConfig }) {
   return (
-    <footer className="border-t border-ink-line bg-ink-soft pb-24 pt-12 md:pb-12">
+    <footer className="border-t border-line bg-surface pb-24 pt-12 text-muted md:pb-12">
       <div className="container-x grid gap-10 md:grid-cols-[1.4fr_0.8fr_0.8fr]">
         <div>
           <div className="flex items-center gap-3">
             <img
-              src="/site-logo.svg"
+              src="/site-logo.png"
               alt={BUSINESS.name}
               className="h-14 w-[260px] max-w-full"
             />
           </div>
-          <p className="mt-5 max-w-md text-sm text-slate-400">
+          <p className="mt-5 max-w-md text-sm text-muted">
             Specialist Merlin opener repairs, servicing, remote setup, and new
             opener installs across Greater Melbourne. Backed by AGG Doors.
           </p>
           <a
             href={BUSINESS.parentUrl}
-            className="mt-5 inline-flex transition hover:scale-[1.01] opacity-60 hover:opacity-100"
+            className="mt-5 inline-flex items-center rounded-2xl bg-navy px-5 py-3 shadow-card transition hover:scale-[1.01]"
             aria-label="Powered by AGG Doors"
           >
             <img
               src="/Powered_by_AGGDoors.png"
               alt="Powered by AGG Doors"
-              className="h-16 w-auto"
+              className="h-14 w-auto"
             />
           </a>
         </div>
 
         <div>
-          <h3 className="font-display font-semibold text-white">Navigate</h3>
-          <div className="mt-4 grid gap-2 text-sm text-slate-400">
+          <h3 className="font-display font-semibold text-ink">Navigate</h3>
+          <div className="mt-4 grid gap-2 text-sm text-muted">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="hover:text-teal-light"
+                className="hover:text-brand"
               >
                 {link.label}
               </a>
@@ -48,18 +48,18 @@ export default function Footer({ config }: { config: NetworkConfig }) {
         </div>
 
         <div>
-          <h3 className="font-display font-semibold text-white">Contact</h3>
-          <div className="mt-4 grid gap-3 text-sm text-slate-400">
+          <h3 className="font-display font-semibold text-ink">Contact</h3>
+          <div className="mt-4 grid gap-3 text-sm text-muted">
             <a
               href={`tel:${config.contact.emergency.tel}`}
               onClick={() => trackCall("emergency")}
-              className="flex items-center gap-2 hover:text-teal-light"
+              className="flex items-center gap-2 hover:text-brand"
             >
               <Phone size={16} /> {config.contact.emergency.number}
             </a>
             <a
               href={`mailto:${CONTACT.email}`}
-              className="flex items-center gap-2 hover:text-teal-light"
+              className="flex items-center gap-2 hover:text-brand"
             >
               <Mail size={16} /> {CONTACT.email}
             </a>
@@ -70,12 +70,12 @@ export default function Footer({ config }: { config: NetworkConfig }) {
         </div>
       </div>
 
-      <div className="container-x mt-10 border-t border-ink-line pt-6 text-xs text-slate-500">
+      <div className="container-x mt-10 border-t border-line pt-6 text-xs text-slate-500">
         <p>
           Copyright {new Date().getFullYear()} {BUSINESS.name}. Powered by{" "}
           <a
             href={BUSINESS.parentUrl}
-            className="text-teal-light hover:text-white"
+            className="text-brand-deep hover:text-brand"
           >
             {BUSINESS.parent}
           </a>

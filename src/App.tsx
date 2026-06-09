@@ -6,6 +6,7 @@ import Hero from "./components/sections/Hero";
 import StatsBar from "./components/sections/StatsBar";
 import Brands from "./components/sections/Brands";
 import Services from "./components/sections/Services";
+import PartsShop from "./components/sections/PartsShop";
 import HowItWorks from "./components/sections/HowItWorks";
 import PricingCallout from "./components/sections/PricingCallout";
 import Testimonials from "./components/sections/Testimonials";
@@ -28,6 +29,7 @@ export default function App() {
         <StatsBar config={config} />
         <Brands />
         <Services />
+        <PartsShop />
         <HowItWorks />
         <PricingCallout />
         <Testimonials config={config} />

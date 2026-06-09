@@ -1,0 +1,114 @@
+{
+  "$schema_note": "Manifest of photographic assets the site needs. Hermes (image_gen) generates each entry to its exact `path`, overwriting in place so no code changes are required. Favicons + social cards are NOT here — they are vector-rasterized via `npm run gen:icons`. Style guide for every prompt: photorealistic, bright, professional Australian trade-business look, natural daylight, realistic colours, no text, no logos, no watermarks, not cheesy/stocky.",
+  "style": "Photorealistic, bright, professional, trustworthy local Australian trade business. Natural daylight, clean modern suburban setting, crisp focus, realistic colours. No text, no logos, no watermarks, no fake brand marks.",
+  "images": [
+    {
+      "filename": "hero-bg.jpg",
+      "path": "public/hero-bg.jpg",
+      "purpose": "Homepage hero background (text overlays the left side)",
+      "aspect_ratio": "landscape",
+      "width": 1600,
+      "height": 1067,
+      "format": "jpg",
+      "where_used": "src/components/sections/Hero.tsx — full-bleed background behind the headline",
+      "alt_text": "Modern double garage with a Merlin opener being serviced by a technician",
+      "prompt": "Wide cinematic shot of a modern Australian suburban double garage with a sectional door partly open; a friendly uniformed technician inspects a ceiling-mounted garage door opener motor; ladder and tidy tools nearby; warm soft morning light. Keep the left third visually calm and uncluttered for text overlay."
+    },
+    {
+      "filename": "service-merlin-repair.webp",
+      "path": "public/service-merlin-repair.webp",
+      "purpose": "Service card — Merlin Opener Repairs",
+      "aspect_ratio": "landscape",
+      "width": 1280,
+      "height": 720,
+      "format": "webp",
+      "where_used": "src/components/sections/Services.tsx — SERVICES[0] card image",
+      "alt_text": "Technician repairing a ceiling-mounted garage door opener motor",
+      "prompt": "Close-up of a technician's hands repairing a ceiling-mounted garage door opener motor unit with a screwdriver; visible gears and circuit board; focused, clean, well-lit garage interior."
+    },
+    {
+      "filename": "service-merlin-tuning.webp",
+      "path": "public/service-merlin-tuning.webp",
+      "purpose": "Service card — Roller Door Opener Repairs / tuning",
+      "aspect_ratio": "landscape",
+      "width": 1280,
+      "height": 720,
+      "format": "webp",
+      "where_used": "src/components/sections/Services.tsx — SERVICES[1] card image",
+      "alt_text": "Technician adjusting a quiet roller-door garage opener belt and rail",
+      "prompt": "Technician adjusting a quiet roller-door garage opener rail and drive belt, checking tension with a tool; bright, tidy residential garage interior."
+    },
+    {
+      "filename": "service-merlin-accessories.webp",
+      "path": "public/service-merlin-accessories.webp",
+      "purpose": "Service card — Remotes, Keypads & myQ setup",
+      "aspect_ratio": "landscape",
+      "width": 1280,
+      "height": 720,
+      "format": "webp",
+      "where_used": "src/components/sections/Services.tsx — SERVICES[2] card image",
+      "alt_text": "Garage door remotes, a wall keypad, and a phone app on a workbench",
+      "prompt": "Clean flat-lay on a workbench of garage door remotes, a wall-mounted keypad, and a smartphone showing a generic, non-branded garage control app; soft even lighting."
+    },
+    {
+      "filename": "service-merlin-hardware.webp",
+      "path": "public/service-merlin-hardware.webp",
+      "purpose": "Service card — Belt, Chain & Hardware",
+      "aspect_ratio": "landscape",
+      "width": 1280,
+      "height": 720,
+      "format": "webp",
+      "where_used": "src/components/sections/Services.tsx — SERVICES[3] card image",
+      "alt_text": "New garage door opener hardware laid out neatly on a workbench",
+      "prompt": "Close-up of new garage door opener hardware — drive belt, sprockets, trolley and mounting brackets — laid out neatly on a clean workbench; crisp focus, natural light."
+    },
+    {
+      "filename": "service-merlin-safety-check.webp",
+      "path": "public/service-merlin-safety-check.webp",
+      "purpose": "Service card — Safety Service & Tune-Up",
+      "aspect_ratio": "landscape",
+      "width": 1280,
+      "height": 720,
+      "format": "webp",
+      "where_used": "src/components/sections/Services.tsx — SERVICES[4] card image",
+      "alt_text": "Technician checking the photo-eye safety sensor on a garage door",
+      "prompt": "Technician performing a safety inspection on a residential garage door, kneeling to check the photo-eye safety sensor near the floor track; bright daylight, professional and reassuring."
+    },
+    {
+      "filename": "service-merlin-install.webp",
+      "path": "public/service-merlin-install.webp",
+      "purpose": "Service card — New Merlin Opener Install",
+      "aspect_ratio": "landscape",
+      "width": 1280,
+      "height": 720,
+      "format": "webp",
+      "where_used": "src/components/sections/Services.tsx — SERVICES[5] card image",
+      "alt_text": "Technician installing a new ceiling-mounted garage door opener",
+      "prompt": "Technician installing a new ceiling-mounted garage door opener motor in a bright residential garage, cordless drill in hand, mounting bracket visible; clean and professional."
+    },
+    {
+      "filename": "why-merlin-specialists.webp",
+      "path": "public/why-merlin-specialists.webp",
+      "purpose": "Why-us section feature image (shown in a 4:3 frame with badges overlaid)",
+      "aspect_ratio": "landscape",
+      "width": 1200,
+      "height": 900,
+      "format": "webp",
+      "where_used": "src/components/sections/WhyUs.tsx — framed image with overlaid badges",
+      "alt_text": "Confident uniformed garage door technician in front of a modern home",
+      "prompt": "Confident, friendly uniformed garage door technician standing in front of a modern Australian home's double garage, arms relaxed, light smile; clean plain uniform with no visible logos; bright natural daylight; leave the lower portion slightly calmer for overlaid badges."
+    },
+    {
+      "filename": "faq-quote-support.webp",
+      "path": "public/faq-quote-support.webp",
+      "purpose": "FAQ support image + final CTA banner image",
+      "aspect_ratio": "landscape",
+      "width": 1280,
+      "height": 960,
+      "format": "webp",
+      "where_used": "src/components/sections/FAQ.tsx (aside) and src/components/sections/FinalCTA.tsx (right half)",
+      "alt_text": "Friendly customer support specialist helping a homeowner by phone",
+      "prompt": "Friendly customer support specialist at a tidy desk with a headset and laptop, warm and approachable, helping a homeowner; bright modern office; clean and trustworthy, no on-screen text."
+    }
+  ]
+}

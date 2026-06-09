@@ -4,14 +4,14 @@ import ScrollReveal from "../ui/ScrollReveal";
 
 export default function ServiceAreas({ config }: { config: NetworkConfig }) {
   return (
-    <section id="service-areas" className="section bg-ink-soft/40">
+    <section id="service-areas" className="section bg-surface">
       <div className="container-x">
         <ScrollReveal className="mx-auto max-w-2xl text-center">
           <span className="eyebrow mb-4">
             <MapPin size={14} /> Where we work
           </span>
           <h2 className="h-section">Servicing Greater Melbourne.</h2>
-          <p className="mt-3 text-slate-400">
+          <p className="mt-3 text-muted">
             Same-day Merlin opener service across {config.serviceAreas.regions.length} regions
             and {config.serviceAreas.suburbs.length}+ suburbs.
           </p>
@@ -21,7 +21,7 @@ export default function ServiceAreas({ config }: { config: NetworkConfig }) {
             {config.serviceAreas.suburbs.map((suburb) => (
               <span
                 key={suburb}
-                className="rounded-full border border-ink-line bg-ink px-3.5 py-1.5 text-sm text-slate-300 transition-all duration-200 hover:-translate-y-0.5 hover:border-teal/40 hover:bg-ink-soft hover:text-teal-light"
+                className="rounded-full border border-line bg-canvas px-3.5 py-1.5 text-sm text-muted transition-all duration-200 hover:-translate-y-0.5 hover:border-brand/40 hover:bg-brand-tint hover:text-brand-deep"
               >
                 {suburb}
               </span>
