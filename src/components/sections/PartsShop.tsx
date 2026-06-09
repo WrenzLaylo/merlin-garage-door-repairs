@@ -1,4 +1,4 @@
-import { ArrowRight, ExternalLink, PackageCheck, ShieldCheck, Sparkles, Truck } from "lucide-react";
+import { MdArrowForward, MdOpenInNew, MdInventory, MdVerifiedUser, MdAutoAwesome, MdLocalShipping } from "react-icons/md";
 import { SHOP_PRODUCTS } from "../../constants";
 
 const shopUrl = "https://shop.aggdoors.com.au/collections/merlin-spare-parts";
@@ -14,7 +14,7 @@ export default function PartsShop() {
           <div className="relative grid gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:items-end">
             <div>
               <span className="eyebrow mb-4">
-                <Sparkles size={14} /> AGG Doors online shop
+                <MdAutoAwesome size={14} /> AGG Doors online shop
               </span>
               <h2 className="h-section max-w-xl">
                 Need the part, not the callout? Shop genuine Merlin spares.
@@ -25,9 +25,9 @@ export default function PartsShop() {
 
               <div className="mt-7 grid gap-3 sm:grid-cols-3">
                 {[
-                  { icon: PackageCheck, title: "Live shop", text: "Direct product links" },
-                  { icon: Truck, title: "Delivery", text: "Australia-wide shipping" },
-                  { icon: ShieldCheck, title: "Advice", text: "Ask before you buy" },
+                  { icon: MdInventory, title: "Live shop", text: "Direct product links" },
+                  { icon: MdLocalShipping, title: "Delivery", text: "Australia-wide shipping" },
+                  { icon: MdVerifiedUser, title: "Advice", text: "Ask before you buy" },
                 ].map((item) => {
                   const Icon = item.icon;
                   return (
@@ -44,7 +44,7 @@ export default function PartsShop() {
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-nowrap sm:gap-2 xl:gap-3">
                 <a href={shopUrl} target="_blank" rel="noreferrer" className="btn-primary shrink-0 whitespace-nowrap px-3 text-xs xl:px-4 xl:text-sm">
-                  <span>View all Merlin spare parts</span> <ExternalLink className="shrink-0" size={15} />
+                  <span>View all Merlin spare parts</span> <MdOpenInNew className="shrink-0" size={15} />
                 </a>
                 <a href="#contact" className="btn-secondary shrink-0 whitespace-nowrap bg-white/90 px-3 text-xs xl:px-4 xl:text-sm">
                   Not sure what fits? Ask us
@@ -84,7 +84,7 @@ export default function PartsShop() {
                         </h3>
                         <div className="mt-2 flex items-center justify-between gap-2">
                           <span className="font-display text-lg font-bold text-brand-deep">{product.price}</span>
-                          <ArrowRight className="text-muted transition group-hover:translate-x-1 group-hover:text-brand-deep" size={16} />
+                          <MdArrowForward className="text-muted transition group-hover:translate-x-1 group-hover:text-brand-deep" size={16} />
                         </div>
                       </div>
                     </a>
@@ -127,7 +127,7 @@ export default function PartsShop() {
                   </p>
                   <p className="mt-3 flex-1 text-sm leading-6 text-muted">{product.note}</p>
                   <span className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-ink transition group-hover:text-brand-deep">
-                    Open product <ExternalLink size={15} />
+                    Open product <MdOpenInNew size={15} />
                   </span>
                 </div>
               </a>

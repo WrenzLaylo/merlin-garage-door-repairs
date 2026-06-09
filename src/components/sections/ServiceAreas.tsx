@@ -1,4 +1,4 @@
-import { MapPin } from "lucide-react";
+import { MdLocationOn } from "react-icons/md";
 import type { NetworkConfig } from "../../hooks/useNetworkConfig";
 import ScrollReveal from "../ui/ScrollReveal";
 
@@ -8,7 +8,7 @@ export default function ServiceAreas({ config }: { config: NetworkConfig }) {
       <div className="container-x">
         <ScrollReveal className="mx-auto max-w-2xl text-center">
           <span className="eyebrow mb-4">
-            <MapPin size={14} /> Where we work
+            <MdLocationOn size={14} /> Where we work
           </span>
           <h2 className="h-section">Servicing Greater Melbourne.</h2>
           <p className="mt-3 text-muted">

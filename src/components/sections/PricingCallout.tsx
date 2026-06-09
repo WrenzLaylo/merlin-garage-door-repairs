@@ -1,4 +1,4 @@
-import { BadgeDollarSign, ShieldCheck } from "lucide-react";
+import { MdAttachMoney, MdVerifiedUser } from "react-icons/md";
 import { PROMISES } from "../../constants";
 import ScrollReveal from "../ui/ScrollReveal";
 
@@ -10,7 +10,7 @@ export default function PricingCallout() {
           <div className="grid overflow-hidden rounded-3xl border border-line bg-gradient-to-br from-surface via-surface to-brand-tint shadow-soft lg:grid-cols-[0.9fr_1.1fr]">
             <div className="border-b border-line p-8 lg:border-b-0 lg:border-r lg:p-10">
               <span className="eyebrow mb-4">
-                <BadgeDollarSign size={14} /> No Fix No Fee
+                <MdAttachMoney size={14} /> No Fix No Fee
               </span>
               <h2 className="font-display text-3xl font-bold text-ink sm:text-4xl">
                 You get a clear quote before the repair.
@@ -18,14 +18,14 @@ export default function PricingCallout() {
             </div>
             <div className="grid gap-5 p-8 sm:grid-cols-2 lg:p-10">
               <div className="rounded-2xl border border-line bg-surface p-5 shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-brand/40 hover:bg-brand-tint">
-                <ShieldCheck className="text-brand" />
+                <MdVerifiedUser className="text-brand" />
                 <h3 className="mt-4 font-display font-semibold text-ink">Repair-first diagnosis</h3>
                 <p className="mt-2 text-sm text-muted">
                   If repair makes sense, we fix it. If replacement is better value, we tell you.
                 </p>
               </div>
               <div className="rounded-2xl border border-line bg-surface p-5 shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-brand/40 hover:bg-brand-tint">
-                <ShieldCheck className="text-brand" />
+                <MdVerifiedUser className="text-brand" />
                 <h3 className="mt-4 font-display font-semibold text-ink">
                   {PROMISES.warrantyMonths}-month workmanship warranty
                 </h3>

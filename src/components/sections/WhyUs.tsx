@@ -1,12 +1,13 @@
-import { Award, Clock, ShieldCheck, Wrench, type LucideIcon } from "lucide-react";
+import { MdEmojiEvents, MdOutlineAccessTime, MdVerifiedUser, MdBuild } from "react-icons/md";
+import type { IconType } from "react-icons";
 import { WHY_US } from "../../constants";
 import ScrollReveal from "../ui/ScrollReveal";
 
-const ICONS: Record<string, LucideIcon> = {
-  award: Award,
-  parts: Wrench,
-  clock: Clock,
-  shield: ShieldCheck,
+const ICONS: Record<string, IconType> = {
+  award: MdEmojiEvents,
+  parts: MdBuild,
+  clock: MdOutlineAccessTime,
+  shield: MdVerifiedUser,
 };
 
 export default function WhyUs() {
@@ -46,7 +47,7 @@ export default function WhyUs() {
 
           <div className="grid gap-5 sm:grid-cols-2">
             {WHY_US.map((item, index) => {
-              const Icon = ICONS[item.icon] ?? Award;
+              const Icon = ICONS[item.icon] ?? MdEmojiEvents;
               return (
                 <ScrollReveal key={item.title} delay={index * 0.05}>
                   <div className="card-hover group h-full">

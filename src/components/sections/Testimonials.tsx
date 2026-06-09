@@ -1,11 +1,6 @@
 import { useState, useRef, useEffect, useCallback } from "react";
-import {
-  ExternalLink,
-  Star,
-  ChevronLeft,
-  ChevronRight,
-  Quote,
-} from "lucide-react";
+import { MdOpenInNew, MdChevronLeft, MdChevronRight, MdFormatQuote } from "react-icons/md";
+import { FaStar } from "react-icons/fa";
 import type { NetworkConfig } from "../../hooks/useNetworkConfig";
 import ScrollReveal from "../ui/ScrollReveal";
 
@@ -15,10 +10,9 @@ function StarRow({ count, size = 14 }: { count: number; size?: number }) {
   return (
     <div className="flex gap-0.5" aria-label={`${count} out of 5 stars`}>
       {Array.from({ length: 5 }).map((_, i) => (
-        <Star
+        <FaStar
           key={i}
           size={size}
-          fill={i < count ? "currentColor" : "none"}
           className={i < count ? "text-gold" : "text-slate-300"}
         />
       ))}
@@ -59,7 +53,7 @@ function ReviewCard({ review }: { review: BuiltReview }) {
   return (
     <div className="card flex h-full flex-col hover:-translate-y-1 hover:shadow-soft">
       <div className="mb-3 flex items-start gap-2">
-        <Quote
+        <MdFormatQuote
           size={18}
           className="mt-0.5 shrink-0 text-brand/40"
           aria-hidden="true"
@@ -121,7 +115,7 @@ function ReviewCard({ review }: { review: BuiltReview }) {
             rel="noopener noreferrer"
             className="ml-auto inline-flex items-center gap-1 text-[11px] font-semibold text-slate-500 transition-colors hover:text-brand-deep"
           >
-            <ExternalLink size={10} aria-hidden="true" />
+            <MdOpenInNew size={10} aria-hidden="true" />
             Verified
           </a>
         )}
@@ -245,7 +239,7 @@ export default function Testimonials({ config }: { config: NetworkConfig }) {
                     {config.stats.reviews}+ reviews
                   </p>
                 </div>
-                <ExternalLink size={12} className="text-slate-400" />
+                <MdOpenInNew size={12} className="text-slate-400" />
               </a>
 
               {/* ProductReview */}
@@ -270,7 +264,7 @@ export default function Testimonials({ config }: { config: NetworkConfig }) {
                     <span className="text-[11px] text-muted">4.8</span>
                   </div>
                 </div>
-                <ExternalLink size={12} className="text-slate-400" />
+                <MdOpenInNew size={12} className="text-slate-400" />
               </a>
             </div>
           </ScrollReveal>
@@ -299,7 +293,7 @@ export default function Testimonials({ config }: { config: NetworkConfig }) {
                     className="absolute -left-3 top-1/2 z-10 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full border border-line bg-surface text-muted shadow-lg transition hover:border-brand/50 hover:bg-brand-tint hover:text-brand-deep md:-left-6"
                     aria-label="Previous reviews"
                   >
-                    <ChevronLeft size={20} />
+                    <MdChevronLeft size={20} />
                   </button>
                   <button
                     onClick={() => {
@@ -309,7 +303,7 @@ export default function Testimonials({ config }: { config: NetworkConfig }) {
                     className="absolute -right-3 top-1/2 z-10 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full border border-line bg-surface text-muted shadow-lg transition hover:border-brand/50 hover:bg-brand-tint hover:text-brand-deep md:-right-6"
                     aria-label="Next reviews"
                   >
-                    <ChevronRight size={20} />
+                    <MdChevronRight size={20} />
                   </button>
                 </>
               )}
@@ -390,7 +384,7 @@ export default function Testimonials({ config }: { config: NetworkConfig }) {
                 />
               </span>
               Word of Mouth
-              <ExternalLink size={13} aria-hidden="true" />
+              <MdOpenInNew size={13} aria-hidden="true" />
             </a>
             <a
               href="https://www.productreview.com.au/listings/agg-doors"
@@ -405,7 +399,7 @@ export default function Testimonials({ config }: { config: NetworkConfig }) {
                 aria-hidden="true"
               />
               ProductReview
-              <ExternalLink size={13} aria-hidden="true" />
+              <MdOpenInNew size={13} aria-hidden="true" />
             </a>
 
           </ScrollReveal>

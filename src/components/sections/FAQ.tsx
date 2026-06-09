@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowRight, ChevronDown, ClipboardCheck, HelpCircle } from "lucide-react";
+import { MdArrowForward, MdExpandMore, MdAssignmentTurnedIn, MdHelpOutline } from "react-icons/md";
 import { FAQ as FAQ_ITEMS } from "../../constants";
 import ScrollReveal from "../ui/ScrollReveal";
 
@@ -33,7 +33,7 @@ export default function FAQ() {
                         aria-expanded={isOpen}
                       >
                         <span className="font-display font-semibold text-ink">{item.q}</span>
-                        <ChevronDown
+                        <MdExpandMore
                           size={20}
                           className={`shrink-0 text-brand transition-transform ${
                             isOpen ? "rotate-180" : ""
@@ -65,7 +65,7 @@ export default function FAQ() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                 <span className="absolute left-5 top-5 grid h-12 w-12 place-items-center rounded-2xl bg-brand text-white shadow-soft">
-                  <HelpCircle size={24} />
+                  <MdHelpOutline size={24} />
                 </span>
               </div>
               <div className="p-6">
@@ -78,12 +78,12 @@ export default function FAQ() {
                 </p>
                 <div className="mt-5 rounded-2xl border border-brand/20 bg-brand-tint p-4 text-sm text-muted">
                   <div className="flex gap-3">
-                    <ClipboardCheck className="mt-0.5 shrink-0 text-brand-deep" size={18} />
+                    <MdAssignmentTurnedIn className="mt-0.5 shrink-0 text-brand-deep" size={18} />
                     <span>Photos, model numbers, and symptoms help us quote faster.</span>
                   </div>
                 </div>
                 <a href="#contact" className="btn-primary mt-6 w-full justify-center">
-                  Request a quote <ArrowRight size={18} />
+                  Request a quote <MdArrowForward size={18} />
                 </a>
               </div>
             </aside>

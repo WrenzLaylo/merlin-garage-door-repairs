@@ -1,4 +1,4 @@
-import { ArrowRight, Phone } from "lucide-react";
+import { MdArrowForward, MdPhone } from "react-icons/md";
 import type { NetworkConfig } from "../../hooks/useNetworkConfig";
 import { trackCall } from "../../utils/analytics";
 import ScrollReveal from "../ui/ScrollReveal";
@@ -31,10 +31,10 @@ export default function FinalCTA({ config }: { config: NetworkConfig }) {
                   onClick={() => trackCall("emergency")}
                   className="btn-accent text-base"
                 >
-                  <Phone size={18} /> Call {config.contact.emergency.number}
+                  <MdPhone size={18} /> Call {config.contact.emergency.number}
                 </a>
                 <a href="#contact" className="btn-secondary text-base">
-                  Request a quote <ArrowRight size={18} />
+                  Request a quote <MdArrowForward size={18} />
                 </a>
               </div>
             </div>

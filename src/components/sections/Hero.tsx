@@ -1,13 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import {
-  ArrowRight,
-  CheckCircle2,
-  Clock,
-  Phone,
-  ShieldCheck,
-  Sparkles,
-  Star,
-} from "lucide-react";
+import { MdPhone, MdArrowForward, MdCheckCircle, MdShield, MdAutoAwesome } from "react-icons/md";
+import { FaStar } from "react-icons/fa";
+import { TbClock24 } from "react-icons/tb";
 import type { NetworkConfig } from "../../hooks/useNetworkConfig";
 import { trackCall } from "../../utils/analytics";
 
@@ -34,7 +28,7 @@ export default function Hero({ config }: { config: NetworkConfig }) {
             transition={{ duration: 0.5 }}
             className="eyebrow"
           >
-            <Star size={14} className="fill-gold text-gold" />
+            <FaStar size={14} className="fill-gold text-gold" />
             {config.stats.rating}/5 from {config.stats.reviews}+ reviews
           </motion.span>
 
@@ -68,10 +62,10 @@ export default function Hero({ config }: { config: NetworkConfig }) {
               onClick={() => trackCall("emergency")}
               className="btn-accent text-base"
             >
-              <Phone size={18} /> Call {config.contact.emergency.number}
+              <MdPhone size={18} /> Call {config.contact.emergency.number}
             </a>
             <a href="#contact" className="btn-secondary text-base">
-              Request free quote <ArrowRight size={18} />
+              Request free quote <MdArrowForward size={18} />
             </a>
           </motion.div>
 
@@ -82,13 +76,13 @@ export default function Hero({ config }: { config: NetworkConfig }) {
             className="mt-8 grid gap-3 text-sm text-muted sm:grid-cols-3"
           >
             <span className="flex items-center gap-2">
-              <ShieldCheck size={17} className="text-brand" /> No Fix No Fee
+              <MdShield size={17} className="text-brand" /> No Fix No Fee
             </span>
             <span className="flex items-center gap-2">
-              <Clock size={17} className="text-brand" /> Same-day and 24/7
+              <TbClock24 size={17} className="text-brand" /> Same-day and 24/7
             </span>
             <span className="flex items-center gap-2">
-              <CheckCircle2 size={17} className="text-brand" /> Genuine Merlin parts
+              <MdCheckCircle size={17} className="text-brand" /> Genuine Merlin parts
             </span>
           </motion.div>
         </div>
@@ -114,12 +108,12 @@ export default function Hero({ config }: { config: NetworkConfig }) {
                 </p>
               </div>
               <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-brand/15 text-brand-deep">
-                <Sparkles size={24} />
+                <MdAutoAwesome size={24} />
               </span>
             </div>
 
             <a href="#contact" className="btn-primary mt-6 w-full">
-              Request callback <ArrowRight size={18} />
+              Request callback <MdArrowForward size={18} />
             </a>
 
             <div className="mt-5 grid grid-cols-3 gap-3 text-center">
@@ -159,7 +153,7 @@ export default function Hero({ config }: { config: NetworkConfig }) {
             </div>
 
             <div className="mt-5 flex items-center gap-3 rounded-xl border border-accent/30 bg-accent-tint p-4 text-sm text-accent transition-all duration-300 hover:border-accent/50 hover:bg-accent/15">
-              <Phone size={18} />
+              <MdPhone size={18} />
               <a
                 href={`tel:${config.contact.emergency.tel}`}
                 onClick={() => trackCall("emergency")}

@@ -1,22 +1,15 @@
-import {
-  Cog,
-  PackageCheck,
-  ShieldCheck,
-  Smartphone,
-  Volume2,
-  Wrench,
-  type LucideIcon,
-} from "lucide-react";
+import { MdBuild, MdVolumeUp, MdSmartphone, MdSettings, MdVerifiedUser, MdInventory } from "react-icons/md";
+import type { IconType } from "react-icons";
 import { SERVICES } from "../../constants";
 import ScrollReveal from "../ui/ScrollReveal";
 
-const ICONS: Record<string, LucideIcon> = {
-  wrench: Wrench,
-  volume: Volume2,
-  smartphone: Smartphone,
-  cog: Cog,
-  shield: ShieldCheck,
-  package: PackageCheck,
+const ICONS: Record<string, IconType> = {
+  wrench: MdBuild,
+  volume: MdVolumeUp,
+  smartphone: MdSmartphone,
+  cog: MdSettings,
+  shield: MdVerifiedUser,
+  package: MdInventory,
 };
 
 export default function Services() {
@@ -34,7 +27,7 @@ export default function Services() {
 
         <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {SERVICES.map((service, index) => {
-            const Icon = ICONS[service.icon] ?? Wrench;
+            const Icon = ICONS[service.icon] ?? MdBuild;
             return (
               <ScrollReveal key={service.id} delay={index * 0.04}>
                 <article className="card group h-full overflow-hidden p-0 transition-all duration-300 hover:-translate-y-1 hover:border-brand/40">

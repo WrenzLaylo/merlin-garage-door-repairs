@@ -1,20 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
-import {
-  AlertCircle,
-  Camera,
-  Check,
-  CheckCircle2,
-  ChevronDown,
-  ClipboardCheck,
-  FileImage,
-  Loader2,
-  Phone,
-  ShieldCheck,
-  Upload,
-  Wrench,
-  X,
-} from "lucide-react";
+import { MdWarning, MdCameraAlt, MdCheck, MdCheckCircle, MdExpandMore, MdAssignmentTurnedIn, MdImage, MdPhone, MdVerifiedUser, MdFileUpload, MdBuild, MdClose } from "react-icons/md";
+import { ImSpinner8 } from "react-icons/im";
 import { CONTACT, FORM_OPTIONS } from "../../constants";
 import type { NetworkConfig } from "../../hooks/useNetworkConfig";
 import { trackCall, trackEvent } from "../../utils/analytics";
@@ -121,7 +108,7 @@ function Dropdown({ label, value, options, onChange, error }: DropdownProps) {
         }`}
       >
         <span className={value ? "text-ink" : "text-slate-400"}>{value || "Select..."}</span>
-        <ChevronDown
+        <MdExpandMore
           size={18}
           className={`text-muted transition-transform ${open ? "rotate-180" : ""}`}
           aria-hidden="true"
@@ -148,7 +135,7 @@ function Dropdown({ label, value, options, onChange, error }: DropdownProps) {
               onClick={() => select(option)}
             >
               {option}
-              {value === option ? <Check size={16} className="text-brand-deep" aria-hidden="true" /> : null}
+              {value === option ? <MdCheck size={16} className="text-brand-deep" aria-hidden="true" /> : null}
             </li>
           ))}
         </ul>
@@ -357,7 +344,7 @@ export default function Contact({ config }: { config: NetworkConfig }) {
               className="flex items-center gap-3 text-ink hover:text-brand-deep"
             >
               <span className="grid h-10 w-10 place-items-center rounded-xl bg-accent-tint text-accent">
-                <Phone size={18} />
+                <MdPhone size={18} />
               </span>
               <span>
                 <span className="block text-xs uppercase tracking-wide text-slate-500">
@@ -372,7 +359,7 @@ export default function Contact({ config }: { config: NetworkConfig }) {
               className="flex items-center gap-3 text-ink hover:text-brand-deep"
             >
               <span className="grid h-10 w-10 place-items-center rounded-xl bg-brand/15 text-brand-deep">
-                <Phone size={18} />
+                <MdPhone size={18} />
               </span>
               <span>
                 <span className="block text-xs uppercase tracking-wide text-slate-500">
@@ -389,7 +376,7 @@ export default function Contact({ config }: { config: NetworkConfig }) {
           <div className="mt-10 rounded-3xl border border-line bg-surface p-5 shadow-soft">
             <div className="flex items-center gap-3">
               <span className="grid h-11 w-11 place-items-center rounded-2xl bg-brand/10 text-brand-deep">
-                <ClipboardCheck size={22} />
+                <MdAssignmentTurnedIn size={22} />
               </span>
               <div>
                 <h3 className="font-display text-lg font-semibold text-ink">
@@ -400,15 +387,15 @@ export default function Contact({ config }: { config: NetworkConfig }) {
             </div>
             <div className="mt-5 grid gap-3 text-sm text-muted">
               <div className="flex gap-3 rounded-2xl border border-line bg-canvas p-4">
-                <Camera className="mt-0.5 shrink-0 text-brand-deep" size={18} />
+                <MdCameraAlt className="mt-0.5 shrink-0 text-brand-deep" size={18} />
                 <span>Upload a photo of the opener, remote, or warning light.</span>
               </div>
               <div className="flex gap-3 rounded-2xl border border-line bg-canvas p-4">
-                <Wrench className="mt-0.5 shrink-0 text-brand-deep" size={18} />
+                <MdBuild className="mt-0.5 shrink-0 text-brand-deep" size={18} />
                 <span>Tell us if it clicks, hums, opens halfway, or will not respond.</span>
               </div>
               <div className="flex gap-3 rounded-2xl border border-line bg-canvas p-4">
-                <ShieldCheck className="mt-0.5 shrink-0 text-brand-deep" size={18} />
+                <MdVerifiedUser className="mt-0.5 shrink-0 text-brand-deep" size={18} />
                 <span>We will confirm repair-first options before recommending replacement.</span>
               </div>
             </div>
@@ -418,7 +405,7 @@ export default function Contact({ config }: { config: NetworkConfig }) {
         <ScrollReveal direction="left">
           {status === "success" ? (
             <div className="card flex flex-col items-center justify-center gap-3 py-16 text-center">
-              <CheckCircle2 size={48} className="text-brand" />
+              <MdCheckCircle size={48} className="text-brand" />
               <h3 className="font-display text-xl font-semibold text-ink">Thanks, we have it.</h3>
               <p className="text-sm text-muted">
                 We will be in touch shortly. For urgent issues, call{" "}
@@ -556,7 +543,7 @@ export default function Contact({ config }: { config: NetworkConfig }) {
                       className="flex min-w-0 flex-1 items-center gap-3 rounded-xl bg-surface px-4 py-3 text-left shadow-card transition hover:bg-brand-tint"
                     >
                       <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-brand/10 text-brand-deep">
-                        {fileName ? <FileImage size={18} /> : <Upload size={18} />}
+                        {fileName ? <MdImage size={18} /> : <MdFileUpload size={18} />}
                       </span>
                       <span className="min-w-0">
                         <span className="block truncate text-sm font-semibold text-ink">
@@ -573,7 +560,7 @@ export default function Contact({ config }: { config: NetworkConfig }) {
                         onClick={removeFile}
                         className="inline-flex items-center justify-center gap-2 rounded-xl border border-accent/30 px-4 py-3 text-sm font-semibold text-accent transition hover:bg-accent/10"
                       >
-                        <X size={16} /> Remove
+                        <MdClose size={16} /> Remove
                       </button>
                     ) : null}
                   </div>
@@ -601,7 +588,7 @@ export default function Contact({ config }: { config: NetworkConfig }) {
               <button type="submit" disabled={status === "submitting"} className="btn-primary w-full text-base">
                 {status === "submitting" ? (
                   <>
-                    <Loader2 size={18} className="animate-spin" /> Sending...
+                    <ImSpinner8 size={18} className="animate-spin" /> Sending...
                   </>
                 ) : (
                   "Request free quote"
@@ -610,7 +597,7 @@ export default function Contact({ config }: { config: NetworkConfig }) {
 
               {status === "error" ? (
                 <p className="flex items-center gap-2 text-sm text-accent">
-                  <AlertCircle size={16} /> {submitError || "Something went wrong."} Please call{" "}
+                  <MdWarning size={16} /> {submitError || "Something went wrong."} Please call{" "}
                   {config.contact.emergency.number} if urgent.
                 </p>
               ) : null}

@@ -1,4 +1,4 @@
-import { Mail, MapPin, Phone } from "lucide-react";
+import { MdPhone, MdEmail, MdLocationOn } from "react-icons/md";
 import { BUSINESS, CONTACT, NAV_LINKS } from "../../constants";
 import type { NetworkConfig } from "../../hooks/useNetworkConfig";
 import { trackCall } from "../../utils/analytics";
@@ -55,16 +55,16 @@ export default function Footer({ config }: { config: NetworkConfig }) {
               onClick={() => trackCall("emergency")}
               className="flex items-center gap-2 hover:text-brand"
             >
-              <Phone size={16} /> {config.contact.emergency.number}
+              <MdPhone size={16} /> {config.contact.emergency.number}
             </a>
             <a
               href={`mailto:${CONTACT.email}`}
               className="flex items-center gap-2 hover:text-brand"
             >
-              <Mail size={16} /> {CONTACT.email}
+              <MdEmail size={16} /> {CONTACT.email}
             </a>
             <span className="flex items-center gap-2">
-              <MapPin size={16} /> {CONTACT.address}
+              <MdLocationOn size={16} /> {CONTACT.address}
             </span>
           </div>
         </div>

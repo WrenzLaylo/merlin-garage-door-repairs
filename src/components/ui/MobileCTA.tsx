@@ -1,4 +1,4 @@
-import { Phone } from "lucide-react";
+import { MdPhone } from "react-icons/md";
 import type { NetworkConfig } from "../../hooks/useNetworkConfig";
 import { trackCall } from "../../utils/analytics";
 
@@ -10,7 +10,7 @@ export default function MobileCTA({ config }: { config: NetworkConfig }) {
         onClick={() => trackCall("emergency")}
         className="btn-accent w-full text-base"
       >
-        <Phone size={18} /> Call {config.contact.emergency.number}
+        <MdPhone size={18} /> Call {config.contact.emergency.number}
       </a>
     </div>
   );
