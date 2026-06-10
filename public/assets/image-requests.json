@@ -1,6 +1,6 @@
 {
   "$schema_note": "Manifest of photographic assets the site needs. Hermes (image_gen) generates each entry to its exact `path`, overwriting in place so no code changes are required. Favicons + social cards are NOT here — they are vector-rasterized via `npm run gen:icons`. Style guide for every prompt: photorealistic, bright, professional Australian trade-business look, natural daylight, realistic colours, no text, no logos, no watermarks, not cheesy/stocky.",
-  "style": "Photorealistic, bright, professional, trustworthy local Australian trade business. Natural daylight, clean modern suburban setting, crisp focus, realistic colours. No text, no logos, no watermarks, no fake brand marks.",
+  "style": "Photorealistic, bright, professional, trustworthy local Australian trade business. Natural daylight, clean modern suburban setting, crisp focus, realistic colours. No watermarks and no stray/garbled text. Equipment (motors, remotes, keypads, opener boxes) should carry the genuine 'MERLIN' brand wordmark where noted in the prompt — spelled exactly M-E-R-L-I-N and legible — but no OTHER brand logos.",
   "images": [
     {
       "filename": "hero-bg.jpg",
@@ -24,7 +24,8 @@
       "format": "webp",
       "where_used": "src/components/sections/Services.tsx — SERVICES[0] card image",
       "alt_text": "Technician repairing a ceiling-mounted garage door opener motor",
-      "prompt": "Close-up of a technician's hands repairing a ceiling-mounted garage door opener motor unit with a screwdriver; visible gears and circuit board; focused, clean, well-lit garage interior."
+      "prompt": "Close-up of a male technician in a plain navy uniform repairing a ceiling-mounted SECTIONAL garage door opener motor head; he holds a screwdriver and a multimeter, the motor's plastic cover removed to reveal the circuit board and drive gear; bright residential garage interior with a white sectional panel door softly out of focus behind. Focus on the hands and the motor unit. The genuine 'MERLIN' brand wordmark is clearly and correctly visible on the motor housing, spelled exactly M-E-R-L-I-N. Photorealistic, natural daylight, landscape 16:9, exactly one garage door, architecturally correct, no extra side openings, no other brand logos, no stray text.",
+      "references": ["A Merlin sectional ceiling-rail opener motor head (e.g. Merlin Professional / Commander) showing the MERLIN wordmark, so the motor shape AND the logo are accurate", "Optionally a photo of an opener with its cover off showing the control board"]
     },
     {
       "filename": "service-merlin-tuning.webp",
@@ -35,8 +36,9 @@
       "height": 720,
       "format": "webp",
       "where_used": "src/components/sections/Services.tsx — SERVICES[1] card image",
-      "alt_text": "Technician adjusting a quiet roller-door garage opener belt and rail",
-      "prompt": "Technician adjusting a quiet roller-door garage opener rail and drive belt, checking tension with a tool; bright, tidy residential garage interior."
+      "alt_text": "Technician servicing a residential roller garage door and its drive motor",
+      "prompt": "A residential ROLLER garage door — a single curved corrugated steel curtain that coils into a round roller drum across the top of the opening (this is NOT a flat sectional panel door and NOT a ceiling-rail opener). The door is rolled half open showing the curling curtain. A technician stands to one side adjusting the compact tubular roller-door drive motor fitted at the end of the roller drum, using a small hand tool. The genuine 'MERLIN' brand wordmark is visible on the roller-door motor unit, spelled exactly M-E-R-L-I-N. Bright daylight at a suburban Australian home. Photorealistic, landscape 16:9, exactly ONE roller door, architecturally correct, no flat panelled door, no extra openings on the side, no other brand logos, no stray text.",
+      "references": ["A real photo of an Australian ROLLER garage door clearly showing the corrugated curtain rolling up into the round drum at the top (this is the most important reference — it stops the model drawing a flat sectional door)", "The Merlin SilentDrive roller-door motor (MR855MYQ / MR655MYQ) showing the MERLIN wordmark, so the drum motor shape and logo are right"]
     },
     {
       "filename": "service-merlin-accessories.webp",
@@ -48,7 +50,8 @@
       "format": "webp",
       "where_used": "src/components/sections/Services.tsx — SERVICES[2] card image",
       "alt_text": "Garage door remotes, a wall keypad, and a phone app on a workbench",
-      "prompt": "Clean flat-lay on a workbench of garage door remotes, a wall-mounted keypad, and a smartphone showing a generic, non-branded garage control app; soft even lighting."
+      "prompt": "Clean top-down flat-lay on a light workbench: two compact garage-door remote handsets, a wall-mounted wireless entry keypad, and a smartphone showing a simple garage-control app with a single open/close control. The genuine 'MERLIN' brand wordmark is clearly visible on the remote handsets and on the keypad, spelled exactly M-E-R-L-I-N. Soft even daylight, tidy composition. Photorealistic, landscape 16:9, legible Merlin branding only, no other brand logos, no stray text.",
+      "references": ["A Merlin remote handset (e.g. E945M) and a Merlin wireless keypad showing the MERLIN wordmark, so the device shapes and logo are accurate", "Optionally a phone showing the myQ-style app screen"]
     },
     {
       "filename": "service-merlin-hardware.webp",
@@ -59,8 +62,9 @@
       "height": 720,
       "format": "webp",
       "where_used": "src/components/sections/Services.tsx — SERVICES[3] card image",
-      "alt_text": "New garage door opener hardware laid out neatly on a workbench",
-      "prompt": "Close-up of new garage door opener hardware — drive belt, sprockets, trolley and mounting brackets — laid out neatly on a clean workbench; crisp focus, natural light."
+      "alt_text": "Drive belt, chain, sprocket and trolley hardware of a garage opener",
+      "prompt": "Macro close-up of the drive components of a ceiling-mounted SECTIONAL garage opener rail: the rubber drive belt and a metal chain running over a sprocket, the plastic trolley/carriage on the rail, plus a couple of spare sprockets and L-brackets laid on a clean workbench beside it. The opener motor head at the end of the rail carries the genuine 'MERLIN' brand wordmark, spelled exactly M-E-R-L-I-N. Mechanical, tidy, crisp focus, natural light. Photorealistic, landscape 16:9, no other brand logos, no stray text.",
+      "references": ["A Merlin opener showing the motor head with the MERLIN wordmark plus the rail, belt or chain, sprocket and plastic trolley carriage", "Loose replacement parts (sprockets, trolley, brackets) for the laid-out detail"]
     },
     {
       "filename": "service-merlin-safety-check.webp",
@@ -72,7 +76,8 @@
       "format": "webp",
       "where_used": "src/components/sections/Services.tsx — SERVICES[4] card image",
       "alt_text": "Technician checking the photo-eye safety sensor on a garage door",
-      "prompt": "Technician performing a safety inspection on a residential garage door, kneeling to check the photo-eye safety sensor near the floor track; bright daylight, professional and reassuring."
+      "prompt": "A technician kneeling at the base of an open residential SECTIONAL garage door, checking one of the two small photo-eye infra-red safety sensors mounted low on the door track near the floor, hand near the little sensor lens; the ceiling opener rail and motor head are visible above the open door, the motor carrying the genuine 'MERLIN' brand wordmark spelled exactly M-E-R-L-I-N. Bright, reassuring daylight. Photorealistic, landscape 16:9, exactly one garage door, no extra openings, no other brand logos, no stray text.",
+      "references": ["A close photo of garage-door photo-eye safety sensors (the small paired infra-red sensors near the floor on the tracks)", "A Merlin opener motor head showing the MERLIN wordmark for the unit above the door"]
     },
     {
       "filename": "service-merlin-install.webp",
@@ -83,8 +88,9 @@
       "height": 720,
       "format": "webp",
       "where_used": "src/components/sections/Services.tsx — SERVICES[5] card image",
-      "alt_text": "Technician installing a new ceiling-mounted garage door opener",
-      "prompt": "Technician installing a new ceiling-mounted garage door opener motor in a bright residential garage, cordless drill in hand, mounting bracket visible; clean and professional."
+      "alt_text": "Technician installing a new ceiling-rail garage door opener",
+      "prompt": "A technician on a step ladder installing a NEW ceiling-rail SECTIONAL garage door opener: fixing the motor head and its rail to the garage ceiling with a cordless drill, the rail running from the motor to the top of a white sectional panel door. A new opener box and remotes sit on the floor below. The genuine 'MERLIN' brand wordmark is clearly visible on both the motor head and the cardboard opener box, spelled exactly M-E-R-L-I-N. Bright, clean residential garage. Photorealistic, landscape 16:9, exactly one garage door, no extra openings, no other brand logos, no stray text.",
+      "references": ["A Merlin sectional ceiling-rail opener kit (motor head plus rail) with the MERLIN wordmark, shown installed on a garage ceiling", "A Merlin opener retail box showing the MERLIN branding"]
     },
     {
       "filename": "why-merlin-specialists.webp",

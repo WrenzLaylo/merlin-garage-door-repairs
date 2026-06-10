@@ -38,7 +38,7 @@ export default function Hero({ config }: { config: NetworkConfig }) {
             transition={{ duration: 0.65, delay: 0.08 }}
             className="mt-6 max-w-4xl font-display text-5xl font-bold leading-[0.95] text-ink sm:text-6xl lg:text-7xl"
           >
-            Merlin garage door <span className="text-brand">repairs</span> in Melbourne.
+            <span className="text-brand">Merlin</span> garage door repairs in Melbourne.
           </motion.h1>
 
           <motion.p

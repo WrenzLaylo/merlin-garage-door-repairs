@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && node scripts/zip-dist.mjs",
+    "build": "vite build && node scripts/prerender.mjs && node scripts/zip-dist.mjs",
+    "prerender": "node scripts/prerender.mjs",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "gen:icons": "node scripts/gen-favicons.mjs",
@@ -26,6 +27,7 @@
     "autoprefixer": "^10.4.19",
     "openai": "^6.42.0",
     "postcss": "^8.4.39",
+    "puppeteer": "^25.1.0",
     "sharp": "^0.34.5",
     "tailwindcss": "^3.4.4",
     "typescript": "^5.4.0",

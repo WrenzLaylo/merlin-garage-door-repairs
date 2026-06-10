@@ -33,7 +33,7 @@ export default {
         card: "0 4px 14px rgba(2,6,23,0.05)",
       },
       maxWidth: {
-        container: "100%",
+        container: "1400px",
       },
     },
   },

@@ -56,7 +56,7 @@ export default function Navbar({ config }: { config: NetworkConfig }) {
 
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-surface/85 shadow-card backdrop-blur-xl">
-      <div className="flex h-20 w-full items-center justify-between gap-4 px-4 sm:px-6 xl:gap-6 xl:px-8">
+      <div className="mx-auto flex h-20 w-full max-w-[1400px] items-center justify-between gap-4 px-4 sm:px-6 xl:gap-6 xl:px-8">
         <a href="#top" className="flex shrink-0 items-center gap-3" aria-label={`${BUSINESS.name} home`}>
           <img
             src="/site-logo.png"

@@ -17,7 +17,7 @@ export default function WhyUs() {
         <div className="grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr]">
           <ScrollReveal>
             <span className="eyebrow mb-4">Why choose us</span>
-            <h2 className="h-section">Melbourne's Merlin specialists.</h2>
+            <h2 className="h-section">Melbourne's <span className="text-brand">Merlin</span> specialists.</h2>
             <p className="mt-4 max-w-xl text-muted">
               We focus on repair-first diagnosis, correct Merlin-compatible parts,
               and opener settings that keep the door safe after the technician leaves.

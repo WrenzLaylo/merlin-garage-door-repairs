@@ -18,7 +18,7 @@ export default function Services() {
       <div className="container-x">
         <ScrollReveal className="mx-auto max-w-2xl text-center">
           <span className="eyebrow mb-4">Services</span>
-          <h2 className="h-section">Everything your Merlin opener needs.</h2>
+          <h2 className="h-section">Everything your <span className="text-brand">Merlin</span> opener needs.</h2>
           <p className="mt-3 text-muted">
             Repairs, tuning, accessories, safety checks, and new installs, handled by
             technicians who work with Merlin systems every week.
